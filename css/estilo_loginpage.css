@@ -1,0 +1,369 @@
+
+/* importacion de el tipo de letra */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+*{
+     font-family: "Bebas Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+
+ background-color: #F0F4F3;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 1100px; 
+    height: 620px;
+    display: flex;
+    position: relative;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
+}
+.form{
+ 
+    width: 100%;
+    overflow: hidden;
+}
+.form form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in;
+}
+.form h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.form span{
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+.container_datos{
+width: 400px;
+height: 40px;
+margin-bottom: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 8px;
+padding: 0 15px;
+background-color: #EEEEEE;
+}
+.container_datos input{
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+}
+.boton{
+    width: 270px;
+    height: 45px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: #3AB397;
+    color: white;
+}
+
+/*animacion de los formularios*/
+.registrarse{
+     transform: translateX(-150%);
+}
+.container.toggle .inicio_sesion{
+    transform: translateX(150%);
+}
+.container.toggle .registrarse{
+    transform: translateX(0);
+}
+
+/*bienvenida*/
+.container_bienvenida{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transform: translateX(100%);
+    background-color: #3AB397;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out,  border-radius 0.5s ease-in-out;
+    border-radius: 50% 0 0 50%;
+}
+.container.toggle .container_bienvenida{
+    transform: translateX(0);
+      border-radius: 0 50% 50% 0;
+      background-color: #3AA8AD;
+}
+.container_bienvenida .bienvenida{
+
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 50px;
+    color: white;
+    transition: transform 0.5s ease-in-out;
+}
+.bienvenida_iniciar{
+    transform: translateX(150%);
+}
+.container_bienvenida h3{
+    font-size: 40px;
+}
+.container_bienvenida p{
+    font-size: 14px;
+    text-align: center;
+}
+.container.toggle .bienvenida_iniciar{
+    transform: translateX(0);
+}
+.container.toggle .bienvenida_registro{
+    transform: translateX(-100%);
+}
+.container_bienvenida .boton{
+    background-color: transparent;
+}
+
+/*radio e animacion*/
+.radio-input input {
+  display: none;
+}
+
+.radio-input {
+  --container_width: 460px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 9999px;
+  background-color: #fff;
+  color: #000000;
+  width: var(--container_width);
+  overflow: hidden;
+  border: 1px solid rgba(53, 52, 52, 0.226);
+}
+
+.radio-input label {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  font-weight: 600;
+  letter-spacing: -1px;
+  font-size: 20px;
+}
+.radio-input label span {
+  font-size: 16px;      
+  font-weight: 600;         
+  color: #333;              
+  letter-spacing: 0.5px;   
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1); 
+}
+.selection {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: calc(var(--container_width) / 8);
+  z-index: 0;
+  left: 0;
+  top: 0;
+  transition: .15s ease;
+}
+
+.radio-input label:has(input:checked) span {
+  color: #fff; 
+}
+
+.radio-input label:has(input:checked) ~ .selection {
+  background-color: #3AA8AD;
+  display: inline-block;
+}
+
+.radio-input label:nth-child(1):has(input:checked) ~ .selection {
+  transform: translateX(calc(var(--container_width) * 0/8));
+}
+
+.radio-input label:nth-child(2):has(input:checked) ~ .selection {
+  transform: translateX(calc(var(--container_width) * 1/8));
+}
+
+.radio-input label:nth-child(3):has(input:checked) ~ .selection {
+  transform: translateX(calc(var(--container_width) * 2/8));
+}
+
+.radio-input label:nth-child(4):has(input:checked) ~ .selection {
+  transform: translateX(calc(var(--container_width) * 3/8));
+}
+.radio-input label:nth-child(5):has(input:checked) ~ .selection {
+  transform: translateX(calc(var(--container_width) * 4/8));
+}
+
+.radio-input label:nth-child(6):has(input:checked) ~ .selection {
+  transform: translateX(calc(var(--container_width) * 5/8));
+}
+.radio-input label:nth-child(7):has(input:checked) ~ .selection {
+  transform: translateX(calc(var(--container_width) * 6/8));
+}
+
+.radio-input label:nth-child(8):has(input:checked) ~ .selection {
+  transform: translateX(calc(var(--container_width) * 7/8));
+}
+
+/*  radio de el genero  */ 
+.genero input {
+  display: none;
+}
+
+.genero{
+  --container_width: 460px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 9999px;
+  background-color: #fff;
+  color: #000000;
+  width: var(--container_width);
+  overflow: hidden;
+  border: 1px solid rgba(53, 52, 52, 0.226);
+}
+
+.genero label {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  font-weight: 600;
+  letter-spacing: -1px;
+  font-size: 20px;
+}
+.genero label span {
+  font-size: 16px;      
+  font-weight: 600;         
+  color: #333;              
+  letter-spacing: 0.5px;   
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1); 
+}
+.selection_genero {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: calc(var(--container_width) / 2);
+  z-index: 0;
+  left: 0;
+  top: 0;
+  transition: .15s ease;
+}
+
+.genero label:has(input:checked) span {
+  color: #fff; 
+}
+
+.genero label:has(input:checked) ~ .selection_genero {
+  background-color: lightskyblue;
+  display: inline-block;
+}
+
+.genero label:nth-child(1):has(input:checked) ~ .selection_genero {
+  transform: translateX(calc(var(--container_width) * 0/2));
+  background-color: lightskyblue;
+}
+.genero label:nth-child(2):has(input:checked) ~ .selection_genero {
+  transform: translateX(calc(var(--container_width) * 1/2));
+  background-color: lightpink;
+}
+
+/* ============================
+   ESTILOS PARA CELULARES
+   ============================ */
+@media (max-width: 768px) {
+
+
+    body {
+        height: auto !important;
+        padding: 20px 0 !important;
+        flex-direction: column !important;
+    }
+
+    .container {
+        width: 100% !important;
+        height: auto !important;
+        flex-direction: column !important;
+        border-radius: 10px !important;
+    }
+
+    .form {
+        width: 100% !important;
+    }
+
+    .form form {
+        padding: 20px 0 !important;
+        width: 100% !important;
+    }
+
+    .container_datos {
+        width: 90% !important;
+    }
+
+    .boton {
+        width: 80% !important;
+    }
+
+    /* Panel de bienvenida */
+   .container_bienvenida {
+        position: relative !important;
+        top: -50px;
+        margin-top: -450px; /* sube 50px */
+        width: 100% !important;
+        height: auto !important;
+        transform: translateX(0) !important;
+        border-radius: 0 !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        overflow: visible !important;
+
+    }
+
+    .container_bienvenida .bienvenida {
+        position: relative !important;
+        padding: 20px !important;
+         z-index: 2; /* más alto que la cúpula */
+        
+        
+    }
+
+    .container.toggle .bienvenida_iniciar,
+    .container.toggle .bienvenida_registro {
+        transform: translateX(0) !important;
+    }
+
+    /* Bloque de selección del tipo de sangre */
+    .radio-input {
+        --container_width: 100% !important;
+        width: 95% !important;
+        font-size: 14px !important;
+        overflow-x: scroll !important;
+    }
+
+    .radio-input label {
+        padding: 8px !important;
+        font-size: 14px !important;
+    }
+}
