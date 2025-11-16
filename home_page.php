@@ -19,8 +19,8 @@
       <div class="menuitem"><ion-icon name="add-circle-outline"></ion-icon><a href="pagina_agregar.php"> Agregar notas</a></div>
       <div class="menuitem"><ion-icon name="person-outline"></ion-icon><a href=""> Perfil</a></div>
     </div>
-
-
+<!--Chupala-->
+         
     <script src="js/script_home.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
