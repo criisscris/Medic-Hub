@@ -16,7 +16,7 @@ background: #F5F5F5;
 /*   Contenedor de los formularios   */
 .container{
   position: relative;
-  width: 1150px;
+  width: 1000px;
   height: 700px;
   background: white;
   border-radius: 45px;
@@ -35,7 +35,7 @@ background: #F5F5F5;
   display: flex;
   align-items: center;
   text-align: center;
-  padding: 40px;
+  padding: 30px;
   z-index: 1;
   transition: .6s ease-in-out 1.2s, visibility 0s 1s ;
 }
@@ -81,17 +81,6 @@ background-color: #EEEEEE;
     font-size: 15px;
 }
 
-.boton{
-    width: 270px;
-    height: 45px;
-    font-size: 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-    background-color: transparent;
-    color: white;
-}
 
 .toggle-box{
   position: absolute;
@@ -106,7 +95,7 @@ background-color: #EEEEEE;
   left: -250%;
   width: 300%;
   height: 100%;
-  background: #3AB397;
+  background: #1e90ff;
   border-radius: 150px;
   z-index: 2;
   transition: 1.8s ease-in-out;
@@ -162,12 +151,19 @@ background-color: #EEEEEE;
     width: 270px;
     height: 45px;
     font-size: 15px;
-    border: none;
-    border-radius: 5px;
+    border: 2px solid white;
+     border-radius: 25px;
     cursor: pointer;
     margin-top: 10px;
-    background-color: #3AB397;
+    background-color: #1e90ff;
     color: white;
+        transition: all 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #1e90ff; 
+    color: black;            
+    transform: scale(1.05);  
 }
 
 /*radio e animacion*/
@@ -223,7 +219,7 @@ background-color: #EEEEEE;
 }
 
 .radio-input label:has(input:checked) ~ .selection {
-  background-color: #3AA8AD;
+  background-color: #1e90ff;
   display: inline-block;
 }
 
@@ -321,6 +317,11 @@ background-color: #EEEEEE;
 .genero label:nth-child(2):has(input:checked) ~ .selection_genero {
   transform: translateX(calc(var(--container_width) * 1/2));
   background-color: lightpink;
+}
+
+img {
+  width: 250px;
+  height: 300px; 
 }
 
 /* ============================
@@ -495,7 +496,7 @@ background-color: #EEEEEE;
 }
 
 .radio-input label:has(input:checked) ~ .selection {
-  background-color: #3AA8AD;
+  background-color: #1e90ff;
   display: inline-block;
 }
 
@@ -520,3 +521,4 @@ background-color: #EEEEEE;
 font-size: 30px;
   }
 }
+

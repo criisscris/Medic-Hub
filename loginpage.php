@@ -108,7 +108,7 @@ include ("loginpageBTN.php");
   </label>
     <span class="selection_genero"></span>
 </div>
-<input name="btnRegistrarse" type="submit" class="boton" style="background-color: #3AA8AD;" value="Registrarse" ></input>
+<input name="btnRegistrarse" type="submit" class="boton" value="Registrarse" ></input>
  <?php 
 include 
 "btn_registrarse.php";?>
@@ -119,11 +119,13 @@ include
 <!-- Botones y h1 para cambiar entre el formulario de registro e inicio de sesion -->
 <div class="toggle-box">
   <div class="toggle-panel toggle-izquierda" >
+  <img src="img/logo.png" alt="Logo de la pagina">
 <h1>Bienvenido a</h1>
 <h1>Medic-Hub</h1>
 <button class="boton registro-btn" >Registrarse</button>
   </div>
  <div class="toggle-panel toggle-derecha" >
+    <img src="img/logo.png" alt="Logo de la pagina">
 <h1>Bienvenido a</h1>
 <h1>Medic-Hub</h1>
 <button class="boton inicio-btn" >Iniciar sesion</button>
