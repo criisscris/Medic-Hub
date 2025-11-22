@@ -1,140 +1,169 @@
-
-/* importacion de el tipo de letra */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 *{
-     font-family: "Bebas Neue", sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-body{
 
- background-color: #F0F4F3;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.container{
-    width: 1100px; 
-    height: 620px;
-    display: flex;
-    position: relative;
-    background-color: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
-}
-.form{
- 
-    width: 100%;
-    overflow: hidden;
-}
-.form form{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.5s ease-in;
-}
-.form h2{
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-.form span{
-    font-size: 12px;
-    margin-bottom: 15px;
-}
-.container_datos{
-width: 400px;
-height: 40px;
-margin-bottom: 10px;
+body{
 display: flex;
 justify-content: center;
 align-items: center;
-gap: 8px;
-padding: 0 15px;
+min-height: 100vh;
+background: #F5F5F5;
+}
+
+/*   Contenedor de los formularios   */
+.container{
+  position: relative;
+  width: 1000px;
+  height: 700px;
+  background: white;
+  border-radius: 45px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+  overflow: hidden;
+  margin: 20px;
+}
+
+/*    Caja y diseño del formulario iniciar sesion */
+.form-box{
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: white;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  z-index: 1;
+  transition: .6s ease-in-out 1.2s, visibility 0s 1s ;
+}
+
+.container.activado .form-box{
+  right: 50%;
+}
+
+.form-box.registro{
+  visibility: hidden;
+}
+
+.container.activado .form-box.registro{
+    visibility: visible;
+}
+
+.container h2{
+font-size: 45px;
+margin: -10px 0;
+}
+
+form{
+  width: 100%;
+}
+
+.container_datos{
+position: relative;
+width: 420px;
+height: 40px;
+margin: 15px;
+display: flex;
+justify-content: center;
+align-items: center;
 background-color: #EEEEEE;
 }
+
 .container_datos input{
     border: none;
     outline: none;
     width: 100%;
     height: 100%;
     background-color: inherit;
+    font-size: 15px;
 }
+
+
+.toggle-box{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+}
+
+.toggle-box::before{
+  content: '';
+  position: absolute;
+  left: -250%;
+  width: 300%;
+  height: 100%;
+  background: #1e90ff;
+  border-radius: 150px;
+  z-index: 2;
+  transition: 1.8s ease-in-out;
+}
+
+.container.activado .toggle-box::before {
+  left: 50%;
+
+}
+
+.toggle-panel{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  transition: .6s ease-in-out;
+}
+
+.toggle-panel.toggle-izquierda{
+  left: 0;
+  transition-delay: 1.2s;
+}
+
+.container.activado .toggle-panel.toggle-izquierda{
+  left: -50%;
+  transition-delay: .6s;
+}
+
+.toggle-panel.toggle-derecha{
+  right: -50%;
+  transition-delay: .6s;
+}
+
+.container.activado .toggle-panel.toggle-derecha{
+  right: 0;
+  transition-delay: 1.2s;
+}
+
+#btnRegistro{
+  width: 160px; 
+  height: 46px;
+  background: transparent;
+  border: 2px solid white;
+
+}
+
 .boton{
     width: 270px;
     height: 45px;
     font-size: 15px;
-    border: none;
-    border-radius: 5px;
+    border: 2px solid white;
+     border-radius: 25px;
     cursor: pointer;
     margin-top: 10px;
-    background-color: #3AB397;
+    background-color: #1e90ff;
     color: white;
+        transition: all 0.3s ease;
 }
 
-/*animacion de los formularios*/
-.registrarse{
-     transform: translateX(-150%);
-}
-.container.toggle .inicio_sesion{
-    transform: translateX(150%);
-}
-.container.toggle .registrarse{
-    transform: translateX(0);
-}
-
-/*bienvenida*/
-.container_bienvenida{
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    transform: translateX(100%);
-    background-color: #3AB397;
-    overflow: hidden;
-    transition: transform 0.5s ease-in-out,  border-radius 0.5s ease-in-out;
-    border-radius: 50% 0 0 50%;
-}
-.container.toggle .container_bienvenida{
-    transform: translateX(0);
-      border-radius: 0 50% 50% 0;
-      background-color: #3AA8AD;
-}
-.container_bienvenida .bienvenida{
-
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 0 50px;
-    color: white;
-    transition: transform 0.5s ease-in-out;
-}
-.bienvenida_iniciar{
-    transform: translateX(150%);
-}
-.container_bienvenida h3{
-    font-size: 40px;
-}
-.container_bienvenida p{
-    font-size: 14px;
-    text-align: center;
-}
-.container.toggle .bienvenida_iniciar{
-    transform: translateX(0);
-}
-.container.toggle .bienvenida_registro{
-    transform: translateX(-100%);
-}
-.container_bienvenida .boton{
-    background-color: transparent;
+.boton:hover {
+    background-color: #1e90ff; 
+    color: black;            
+    transform: scale(1.05);  
 }
 
 /*radio e animacion*/
@@ -190,7 +219,7 @@ background-color: #EEEEEE;
 }
 
 .radio-input label:has(input:checked) ~ .selection {
-  background-color: #3AA8AD;
+  background-color: #1e90ff;
   display: inline-block;
 }
 
@@ -290,80 +319,206 @@ background-color: #EEEEEE;
   background-color: lightpink;
 }
 
+img {
+  width: 250px;
+  height: 300px; 
+}
+
 /* ============================
    ESTILOS PARA CELULARES
    ============================ */
-@media (max-width: 768px) {
+@media screen and (max-width: 650px) {
+  .container{
+    height: calc(100vh - 40px);
+  }
 
+  .form-box{
+    bottom: 0;
+    width:100% ;
+    height: 70%;
+  }
 
-    body {
-        height: auto !important;
-        padding: 20px 0 !important;
-        flex-direction: column !important;
-    }
+  .container.activado .form-box{
+    right: 0;
+    bottom: 30%;
+  }
 
-    .container {
-        width: 100% !important;
-        height: auto !important;
-        flex-direction: column !important;
-        border-radius: 10px !important;
-    }
+  .toggle-box::before{
+    left: 0;
+    top: -270%;
+    width: 100%;
+    height: 300%;
+    border-radius: 20vw;
+  }
 
-    .form {
-        width: 100% !important;
-    }
+  .container.activado .toggle-box::before{
+    left: 0;
+    top: 70%;
+  }
 
-    .form form {
-        padding: 20px 0 !important;
-        width: 100% !important;
-    }
-
-    .container_datos {
-        width: 90% !important;
-    }
-
-    .boton {
-        width: 80% !important;
-    }
-
-    /* Panel de bienvenida */
-   .container_bienvenida {
-        position: relative !important;
-        top: -50px;
-        margin-top: -450px; /* sube 50px */
-        width: 100% !important;
-        height: auto !important;
-        transform: translateX(0) !important;
-        border-radius: 0 !important;
-        flex-direction: column !important;
-        text-align: center !important;
-        overflow: visible !important;
-
-    }
-
-    .container_bienvenida .bienvenida {
-        position: relative !important;
-        padding: 20px !important;
-         z-index: 2; /* más alto que la cúpula */
-        
-        
-    }
-
-    .container.toggle .bienvenida_iniciar,
-    .container.toggle .bienvenida_registro {
-        transform: translateX(0) !important;
-    }
-
-    /* Bloque de selección del tipo de sangre */
-    .radio-input {
-        --container_width: 100% !important;
-        width: 95% !important;
-        font-size: 14px !important;
-        overflow-x: scroll !important;
-    }
-
-    .radio-input label {
-        padding: 8px !important;
-        font-size: 14px !important;
-    }
+.toggle-panel{
+  width: 100%;
+  height: 30%;
 }
+
+.toggle-panel.toggle-izquierda{
+  top: 0;
+
+}
+
+.container.activado .toggle-panel.toggle-izquierda{
+  left: 0;
+  top: -30%;
+
+}
+
+.toggle-panel.toggle-derecha{
+  right: 0;
+  bottom: -30%;
+}
+
+.container.activado .toggle-panel.toggle-derecha{
+  bottom: 0;
+
+}
+
+.container_datos{
+position: relative;
+width: 100%;
+height: 30px;
+margin: 15px;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #EEEEEE;
+}
+
+.container_datos input{
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    font-size: 15px;
+}
+
+
+  .radio-input {
+    --container_width: 100%;
+    max-width: 350px;
+  }
+
+  .radio-input label span {
+    font-size: 14px;
+  }
+
+  /* FIXED: Gender selection for mobile - mantiene la animación */
+  .genero {
+    --container_width: 100%;
+    max-width: 350px;
+    width: 100%;
+  }
+
+  .genero label {
+    padding: 8px;
+  }
+
+  .genero label span {
+    font-size: 14px;
+  }
+
+  /* CRITICAL: Mantener el selector de animación funcionando en móvil */
+  .genero .selection_genero {
+    width: 50%;
+  }
+
+  .genero label:nth-child(1):has(input:checked) ~ .selection_genero {
+    transform: translateX(0);
+    background-color: lightskyblue;
+  }
+
+  .genero label:nth-child(2):has(input:checked) ~ .selection_genero {
+    transform: translateX(100%);
+    background-color: lightpink;
+  }
+
+.radio-input {
+  --container_width: 100%;       /* Se adapta al ancho disponible */
+  max-width: 460px;              /* No excede 460px en pantallas grandes */
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 9999px;
+  background-color: #fff;
+  color: #000;
+  overflow: hidden;
+  border: 1px solid rgba(53, 52, 52, 0.226);
+}
+
+.radio-input input {
+  display: none;
+}
+
+.radio-input label {
+  flex: 1;                       /* Cada opción ocupa el mismo espacio */
+  padding: 8px;                  /* Más compacto para móviles */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  font-weight: 600;
+  font-size: 14px;               /* Texto más pequeño en móviles */
+  letter-spacing: -0.5px;
+}
+
+.radio-input label span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.selection {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: calc(100% / 8);         /* Se adapta proporcionalmente al número de opciones */
+  z-index: 0;
+  left: 0;
+  top: 0;
+  transition: .15s ease;
+}
+
+.radio-input label:has(input:checked) span {
+  color: #fff;
+}
+
+.radio-input label:has(input:checked) ~ .selection {
+  background-color: #1e90ff;
+  display: inline-block;
+}
+
+/* Animación proporcional */
+.radio-input label:nth-child(1):has(input:checked) ~ .selection { transform: translateX(0%); }
+.radio-input label:nth-child(2):has(input:checked) ~ .selection { transform: translateX(100%); }
+.radio-input label:nth-child(3):has(input:checked) ~ .selection { transform: translateX(200%); }
+.radio-input label:nth-child(4):has(input:checked) ~ .selection { transform: translateX(300%); }
+.radio-input label:nth-child(5):has(input:checked) ~ .selection { transform: translateX(400%); }
+.radio-input label:nth-child(6):has(input:checked) ~ .selection { transform: translateX(500%); }
+.radio-input label:nth-child(7):has(input:checked) ~ .selection { transform: translateX(600%); }
+.radio-input label:nth-child(8):has(input:checked) ~ .selection { transform: translateX(700%); }
+
+}
+
+@media screen and (max-width: 400px) {
+  .form-box{
+    padding: 20px;
+  }
+
+  .toggle-panel h2{
+font-size: 30px;
+  }
+}
+

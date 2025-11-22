@@ -11,7 +11,7 @@
 <!-- El div que contiene todos los formularios -->
 <div class="container" >
 
-<div class="form">
+<div class="form-box sesion">
 <!-- formulario de inicio de sesion  -->
     <form method="post"  class="inicio_sesion">
 <h2>Iniciar sesion</h2>
@@ -26,12 +26,14 @@
 </div>
 <?php 
 include ("loginpageBTN.php");
- ?>
+ ?> <br>
 <input type="submit" name="btnIniciar_sesion" class="boton" value="Iniciar sesion" >
     </form>
 </div>
+
+
 <!-- formulario de registro -->
-<div class="form">
+<div class="form-box registro">
 <form method="post" class="registrarse">
     <h2>Registrarse</h2>
     <span>Cree un usuario y contraseña e ingrese sus datos</span>
@@ -106,30 +108,34 @@ include ("loginpageBTN.php");
   </label>
     <span class="selection_genero"></span>
 </div>
-<input name="btnRegistrarse" type="submit" class="boton" style="background-color: #3AA8AD;" value="Registrarse" ></input>
+<input name="btnRegistrarse" type="submit" class="boton" value="Registrarse" ></input>
  <?php 
 include 
 "btn_registrarse.php";?>
 </form>
 </div>
-<!-- Botones y h3 para cambiar entre el formulario de registro e inicio de sesion -->
-<div class="container_bienvenida" >
-<div class="bienvenida_iniciar bienvenida">
-<h3>Medic-Note</h3>
-<p>Ingrese sus datos para Registrarse</p>
-<button class="boton" id="btnRegistrarse" >Iniciar sesion</button>
-</div>
-<div class="bienvenida_registro bienvenida">
-<h3>Medic-Note</h3>
-<p>Ingrese sus datos para Iniciar sesion</p>
-<button class="boton" id="btnIniciar_sesion">Registrarse</button>
-</div>
+
+
+<!-- Botones y h1 para cambiar entre el formulario de registro e inicio de sesion -->
+<div class="toggle-box">
+  <div class="toggle-panel toggle-izquierda" >
+  <img src="img/logo.png" alt="Logo de la pagina">
+<h1>Bienvenido a</h1>
+<h1>Medic-Hub</h1>
+<button class="boton registro-btn" >Registrarse</button>
+  </div>
+ <div class="toggle-panel toggle-derecha" >
+    <img src="img/logo.png" alt="Logo de la pagina">
+<h1>Bienvenido a</h1>
+<h1>Medic-Hub</h1>
+<button class="boton inicio-btn" >Iniciar sesion</button>
+  </div>
 </div>
 </div>
 
 
 <!-- relacion con el java script -->
-    <script src="js/scrip_loginpage.js" ></script>
+    <script src="js/scrip_loginpage.js" defer ></script>
     <!-- libreria para los iconos -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
