@@ -77,3 +77,64 @@ a{
    width: 60px;
    border: 5px solid red;
 }
+/*Media. chupenla, pruebas*/
+/* Botón hamburguesa oculto por defecto */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* 📱 Teléfonos grandes (iPhone XR, 8+, Galaxy Fold cerrado) */
+@media (max-width: 414px) {
+  .bo {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    height: auto;
+    padding: 10px;
+  }
+  .menu {
+  display: none;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+
+.menu.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+  .hamburger {
+    display: block; /* aparece el botón */
+  }
+
+  .menu {
+    display: none; /* oculto por defecto */
+    width: 100%;
+    float: none;
+    border-radius: 0;
+    padding: 10px;
+    text-align: center;
+    background-color: lightskyblue;
+  }
+
+  .menu.show {
+    display: block; /* se muestra al hacer clic */
+  }
+
+  .menuitem {
+    margin: 5px 0;
+    border: none;
+  }
+
+  .main {
+    width: 100%;
+    float: none;
+    margin: 10px 0;
+    padding: 15px;
+  }
+}
