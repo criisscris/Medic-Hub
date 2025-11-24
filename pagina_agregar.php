@@ -7,19 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="bo">
-    <h1>Medic-hub</h1>
-  </div>
+<div class="bo">
+  <h1>Medic-hub</h1>
+  <!-- Botón hamburguesa. chupala -->
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+</div>
 
-<!-- barra lateral  --> 
-     <div class="menG">
-    <div class="menu">
+<!-- barra de navegacion lateral  --> 
+<div class="menG">
+    <div class="menu" id="menu">
           <div class="menuitem"> <ion-icon name="home-outline"></ion-icon> <a href="home_page.php"> Menu</a></div>
       <div class="menuitem"><ion-icon name="document-text-outline"></ion-icon><a href=""> Tus notas</a></div>
       <div class="menuitem"><ion-icon name="add-circle-outline"></ion-icon><a href="pagina_agregar.php"> Agregar notas</a></div>
       <div class="menuitem"><ion-icon name="person-outline"></ion-icon><a href=""> Perfil</a></div>
     </div>
 
+
+<!-- pide todos los datos que se enviaran a base de datos  --> 
     <div id="agregar_nota">
     <div class="container_datos" >
 <input type="text" placeholder="Titulo" id="txtTitulo" name="titulo">
@@ -36,13 +40,20 @@
  <div class="container_datos" >
 <input type="number" step="0.01" placeholder="Altura" id="txtAltura" name="Altura">
 </div>
-<textarea class="textarea-diagnostico" placeholder="Escriba el diagnostico"></textarea>
-<textarea class="textarea-diagnostico" placeholder="Tratamiento y recomendaciones"></textarea>
- <div class="container_datos" >
-<input type="file" accept="image/*">
+<textarea id="diagnostico" class="textarea-diagnostico" placeholder="Escriba el diagnostico"></textarea>
+<textarea id="tratamiento" class="textarea-diagnostico" placeholder="Tratamiento y recomendaciones"></textarea><br>
+<!-- boton para subir las imagenes  --> 
+ <label for="file-upload" class="upload-btn">
+ <ion-icon name="arrow-up-circle-outline"></ion-icon>   
+  Subir Imagenes</label>
+  <input id="file-upload" type="file" accept="image/*" multiple>
+<!-- aqui se veran todas las imagenes  --> 
+  <div  id="preview" class="preview"></div>
+ <input name="BTNagregar" type="submit"  id="BTNagregar" value="Guardar nota" ></input>
 </div>
-</div>
-    <script src="js/script_home.js"></script>
+
+
+    <script src="js/pagina_agregar.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

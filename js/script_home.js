@@ -9,6 +9,10 @@ img.width=250;
 img.height=200;
 divImagen.appendChild(img);
 }
+
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
 //media, pruebas
 function toggleMenu() {
   document.getElementById("menu").classList.toggle("show");

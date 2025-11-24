@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+ <div class="bo">
+    <h1>Medic-Hub</h1>
 <div class="bo">
   <h1>Medic-hub</h1>
   <!-- Botón hamburguesa. chupala -->
@@ -22,6 +24,9 @@
     <div class="menuitem"><ion-icon name="person-outline"></ion-icon><a href=""> Perfil</a></div>
   </div>
 </div>--> 
+
+<!-- barra de navegacion  --> 
+
 
 <!-- barra lateral  --> 
      <div class="menG">
