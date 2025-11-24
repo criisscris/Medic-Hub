@@ -8,17 +8,10 @@
 </head>
 <body>
  <div class="bo">
-    <h1>Medic-hub</h1>
+    <h1>Medic-Hub</h1>
   </div>
 
-<!-- barra lateral  --> 
-     <div class="menG">
-    <div class="menu">
-          <div class="menuitem"> <ion-icon name="home-outline"></ion-icon> <a href="home_page.php"> Menu</a></div>
-      <div class="menuitem"><ion-icon name="document-text-outline"></ion-icon><a href=""> Tus notas</a></div>
-      <div class="menuitem"><ion-icon name="add-circle-outline"></ion-icon><a href="pagina_agregar.php"> Agregar notas</a></div>
-      <div class="menuitem"><ion-icon name="person-outline"></ion-icon><a href=""> Perfil</a></div>
-    </div>
+<!-- barra de navegacion  --> 
 
 
     <script src="js/script_home.js"></script>
