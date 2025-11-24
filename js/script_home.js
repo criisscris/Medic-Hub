@@ -9,3 +9,7 @@ img.width=250;
 img.height=200;
 divImagen.appendChild(img);
 }
+//media, pruebas
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
