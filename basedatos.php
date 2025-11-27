@@ -2,10 +2,10 @@
 
 function conectar_bd()
 {
-    $servidor = "localhost";
-    $nombrebd = "historial";
-    $usuario = "root";
-    $contrasena = "";
+    $servidor = "sql100.infinityfree.com";
+    $nombrebd = "if0_40531531_historial";
+    $usuario = "if0_40531531";
+    $contrasena = "WDRWG9JxAa";
 
 
 $conexion = new mysqli("localhost","root","","historial");
