@@ -7,13 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-<div class="bo">
+    <div class="bo">
   <h1>Medic-hub</h1>
   <!-- Botón hamburguesa. chupala -->
   <div class="hamburger" onclick="toggleMenu()">☰</div>
 </div>
 
-<!-- barra lateral  --> 
+<!-- barra de navegacion lateral  --> 
 <div class="menu" id="menu">
   <div class="menuitem">
     <ion-icon name="home-outline"></ion-icon>
@@ -39,7 +39,6 @@
     <a href="#">Perfil</a>
   </div>
 </div>
-<!--Chupala-->
          
     <script src="js/script_home.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

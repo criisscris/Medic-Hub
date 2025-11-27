@@ -133,12 +133,7 @@ a{
     height: auto;
     padding: 10px;
   }
-  .menu {
-  display: none;
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: all 0.3s ease;
-}
+
 
 .menu.show {
   display: block;
@@ -149,15 +144,18 @@ a{
     display: block; /* aparece el botón */
   }
 
-  .menu {
-    display: none; /* oculto por defecto */
-    width: 100%;
-    float: none;
-    border-radius: 0;
-    padding: 10px;
-    text-align: center;
-    background-color: lightskyblue;
-  }
+.menu {
+  display: none;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+  width: 100%;
+  float: none;
+  border-radius: 0;
+  padding: 10px;
+  text-align: center;
+  background-color: lightskyblue;
+}
 
   .menu.show {
     display: block; /* se muestra al hacer clic */
