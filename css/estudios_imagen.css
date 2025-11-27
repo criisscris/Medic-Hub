@@ -1,0 +1,247 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+.bo {
+   display: flex;     
+ font-size: 50px;
+    width: 100%;
+     height: 150px;
+     background-color: lightskyblue;
+         padding: 20px;
+}
+
+/* barra de navegacion */
+.menu {
+   float: left;
+   width: 20%;
+   background-color: lightskyblue;
+   color: white;
+   padding: 20px;
+   height: 100%;
+   min-height: 50vh;
+   border-radius: 30px;
+}
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.menuitem {
+   padding: 12px;
+   margin-top: 10px;
+   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+   text-transform: uppercase;
+   font-weight: bold;
+   transition: background 0.3s ease;
+}
+
+.menuitem:hover {
+   background-color: #1e90ff;
+   cursor: pointer;
+   color: black;
+}
+.menuitem:hover a {
+    color: black;
+}
+
+.submenu {
+  position: relative;
+}
+
+.submenu-list {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1e90ff;
+  padding: 0;
+  margin: 0;
+  display: none;
+  border-radius: 0 0 10px 10px;
+  z-index: 1000;
+  width: 100%;
+}
+
+.submenu-list li a {
+  display: block;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.submenu-list li a:hover {
+  background-color: #ffffff;
+  color: #1e90ff;
+}
+
+/* Mostrar submenú al pasar el mouse */
+.submenu:hover .submenu-list {
+  display: block;
+}
+
+/* Botón hamburguesa oculto por defecto */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+#img{
+   height: 60px;
+   width: 60px;
+   border: 5px solid red;
+}
+
+#agregar_nota{
+    margin-left: 310px;
+    margin-top: 10px;
+    width: 1190px;
+height: 560px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
+    background-color: white;
+    padding: 10px 15px;
+
+}
+
+/*  vista previa de las imagenes y los archivos pdf   */
+.preview a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 18px;
+  background: #f0f8ff; /* azul muy claro */
+  border: 1px solid #1e90ff;
+  border-radius: 8px;
+  color: #1e90ff;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* corta nombres largos */
+}
+
+/* Hover más atractivo */
+.preview a:hover {
+  background: #1e90ff;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+
+/* Contenedor de archivo (imagen o enlace) */
+.img-container {
+  display: inline-block;
+  position: relative;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  background: #fafafa;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Botón eliminar más moderno */
+.delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 50%;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #cc0000;
+}
+
+       #BTNagregar{
+      position: absolute;
+  top: 650px;   
+  right: 30px;
+  width: 160px; 
+  height: 46px;
+  background: #1e90ff;
+  border: none;
+  font-size: 15px;
+  color: white;
+  border-radius: 5px;
+    }
+
+      .upload-btn {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      position: absolute;
+      top: 650px;   
+      right: 225px;
+      padding: 10px 20px;
+       width: 160px; 
+  height: 46px;
+    }
+
+    input[type="file"] {
+  display: none; /* oculta el botón nativo */
+}
+
+    .preview img {
+      margin: 10px;
+      width: 150px;
+      height: 150px;
+    }
+
+    /*  estilo de los inputs  */
+    .container_datos{
+width: 400px;
+height: 40px;
+margin-bottom: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 8px;
+padding: 0 15px;
+background-color: #EEEEEE;
+}
+.container_datos input{
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+
+} 
+
+/* Estilo del label */
+
+.select-estudio {
+padding: 0.6rem 0.8rem;
+border: 2px solid #4b9cd3;
+border-radius: 10px;
+font-size: 1rem;
+background: #f7fbff;
+transition: 0.2s ease;
+}
+
+
+.select-estudio:focus {
+outline: none;
+border-color: #1e6fa8;
+box-shadow: 0 0 6px rgba(30, 111, 168, 0.4);
+}

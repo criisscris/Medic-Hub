@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/pagina_agregar.css">
+  <link rel="stylesheet" href="css/estudios_imagen.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-<div class="bo">
+    <div class="bo">
   <h1>Medic-hub</h1>
   <!-- Botón hamburguesa. chupala -->
   <div class="hamburger" onclick="toggleMenu()">☰</div>
@@ -42,35 +42,33 @@
 
 <!-- pide todos los datos que se enviaran a base de datos  --> 
     <div id="agregar_nota">
-    <div class="container_datos" >
-<input type="text" placeholder="Titulo" id="txtTitulo" name="titulo">
+
+  <div class="container_datos" >
+<input type="date"" placeholder="fecha" id="txtFecha" name="txtFecha" >
 </div>
-    <div class="container_datos" >
-<input type="date" placeholder="Fecha" id="txtFecha" name="fecha">
-</div>
-    <div class="container_datos" >
-<input type="number" step="0.01" placeholder="Peso" id="txtPeso" name="peso">
-</div>
- <div class="container_datos" >
-<input type="number" step="0.01" placeholder="Temperatura" id="txtTemperatura" name="temperatura">
-</div>
- <div class="container_datos" >
-<input type="number" step="0.01" placeholder="Altura" id="txtAltura" name="Altura">
-</div>
-<textarea id="diagnostico" class="textarea-diagnostico" placeholder="Escriba el diagnostico"></textarea>
-<textarea id="tratamiento" class="textarea-diagnostico" placeholder="Tratamiento y recomendaciones"></textarea><br>
+<!-- option  --> 
+  <label for="tipo-estudio">Tipo de estudio:</label>
+    <select id="tipo-estudio" name="tipo-estudio" class="select-estudio">
+      <option value="sangre">Análisis de sangre</option>
+      <option value="orina">Examen de orina</option>
+      <option value="rayos-x">Rayos X</option>
+      <option value="ultrasonido">Ultrasonido</option>
+      <option value="resonancia">Resonancia magnética</option>
+       <option value="Otro">Otro</option>
+    </select>
+    <br>
 <!-- boton para subir las imagenes  --> 
  <label for="file-upload" class="upload-btn">
  <ion-icon name="arrow-up-circle-outline"></ion-icon>   
   Subir Imagenes</label>
-  <input id="file-upload" type="file" accept="image/*" multiple>
+  <input id="file-upload" type="file"  accept="image/*,.pdf,.doc,.docx"  multiple>
 <!-- aqui se veran todas las imagenes  --> 
   <div  id="preview" class="preview"></div>
  <input name="BTNagregar" type="submit"  id="BTNagregar" value="Guardar nota" ></input>
 </div>
 
 
-    <script src="js/pagina_agregar.js"></script>
+    <script src="js/estudios_imagen.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
