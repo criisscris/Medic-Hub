@@ -18,27 +18,25 @@
   </div>
 
   <!-- MENÚ LATERAL -->
-  <div class="menu" id="menu">
-    <div class="menuitem"><ion-icon name="home-outline"></ion-icon><a href="home_page.php">Menu</a></div>
-    <div class="menuitem"><ion-icon name="document-text-outline"></ion-icon><a href="#">Tus notas</a></div>
+  <div class="page">
+    <div class="menu" id="menu">
+      <div class="menuitem"><ion-icon name="home-outline"></ion-icon><a href="home_page.php">Menu</a></div>
+      <div class="menuitem"><ion-icon name="document-text-outline"></ion-icon><a href="#">Tus notas</a></div>
 
-    <div class="menuitem submenu">
-      <ion-icon name="add-circle-outline"></ion-icon>
-      <a href="#">Agregar notas</a>
-      <ul class="submenu-list">
-        <li><a href="pagina_agregar.php">Notas médicas</a></li>
-        <li><a href="estudios_imagen.php">Estudios de imagen</a></li>
-      </ul>
+      <div class="menuitem submenu">
+        <ion-icon name="add-circle-outline"></ion-icon>
+        <a href="#">Agregar notas</a>
+        <ul class="submenu-list">
+          <li><a href="pagina_agregar.php">Notas médicas</a></li>
+          <li><a href="estudios_imagen.php">Estudios de imagen</a></li>
+        </ul>
     </div>
 
     <div class="menuitem"><ion-icon name="person-outline"></ion-icon><a href="#">Perfil</a></div>
-  </div>  
-  <!--Overlay-->
-  <div class="menu-overlay" id="menu-overlay"></div>
-
+    </div>  
   <!-- CONTENIDO -->
   <div class="form-container">
-
+  
 
       <h2>Registrar estudio</h2>
 
@@ -72,9 +70,13 @@
       <button class="save-btn">Guardar estudio</button>
 
   </div>
+</div>  
+     <!--Overlay-->
+    <div class="menu-overlay" id="menu-overlay"></div>
 
   <script src="js/estudios_imagen.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="js/menu_toggle.js"></script>
 </body>
 </html>
