@@ -1,326 +1,189 @@
+/* ===========================
+   RESETEO GENERAL
+=========================== */
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a{
-    text-decoration: none;
+body {
+    background-color: #F0F4F3;
+    font-family: Arial, sans-serif;
 }
 
+a { text-decoration: none; }
+
+/* ===========================
+   HEADER Y MENU LATERAL
+=========================== */
 .bo {
-   display: flex;     
- font-size: 50px;
-    width: 100%;
-     height: 150px;
-     background-color: lightskyblue;
-         padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: lightskyblue;
+  padding: 20px;
 }
 
-/* barra de navegacion */
-.menu {
-   float: left;
-   width: 20%;
-   background-color: lightskyblue;
-   color: white;
-   padding: 20px;
-   height: 100%;
-   min-height: 50vh;
-   border-radius: 30px;
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
 }
-.menu a {
-    color: white;
-    text-decoration: none;
+
+.menu {
+  width: 250px;
+  background: lightskyblue;
+  padding: 20px;
+  border-radius: 20px;
+  min-height: 90vh;
 }
 
 .menuitem {
-   padding: 12px;
-   margin-top: 10px;
-   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-   text-transform: uppercase;
-   font-weight: bold;
-   transition: background 0.3s ease;
+  padding: 12px;
+  margin-top: 12px;
+  color: white;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  font-weight: bold;
+  text-transform: uppercase;
 }
+
+.menuitem a { color: white; }
 
 .menuitem:hover {
-   background-color: #1e90ff;
-   cursor: pointer;
-   color: black;
-}
-.menuitem:hover a {
-    color: black;
+  background: #1e90ff;
 }
 
+/* Submenu */
 .submenu {
   position: relative;
 }
 
 .submenu-list {
   list-style: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #1e90ff;
-  padding: 0;
-  margin: 0;
-  display: none;
-  border-radius: 0 0 10px 10px;
-  z-index: 1000;
-  width: 100%;
+  padding-left: 15px;
+  margin: 5px 0 0 0;
+  display: none;         /* Oculto por defecto */
 }
 
-.submenu-list li a {
-  display: block;
-  padding: 10px;
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  border-top: 1px solid rgba(255,255,255,0.2);
-}
-
-.submenu-list li a:hover {
-  background-color: #ffffff;
-  color: #1e90ff;
-}
-
-/* Mostrar submenú al pasar el mouse */
 .submenu:hover .submenu-list {
-  display: block;
+  display: block;        /* Se expande hacia abajo */
+  position: static !important;   /* 🔥 FIX principal */
 }
 
-/* Botón hamburguesa oculto por defecto */
-.hamburger {
+/* Lo cambie, no se si se lo uses despues o algo
+.submenu { position: relative; }
+
+.submenu-list {
   display: none;
-  font-size: 30px;
-  cursor: pointer;
-  margin-left: auto;
-}
-
-
-
-/* Responsivo */
-@media (max-width: 520px) {
- .bo {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 30px;
-    height: auto;
-    padding: 10px;
-  }
-  .menu {
-  display: none;
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: all 0.3s ease;
-}
-
-.menu.show {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
-  .hamburger {
-    display: block; /* aparece el botón */
-  }
-
-  .menu {
-    display: none; /* oculto por defecto */
-    width: 100%;
-    float: none;
-    border-radius: 0;
-    padding: 10px;
-    text-align: center;
-    background-color: lightskyblue;
-  }
-
-  .menu.show {
-    display: block; /* se muestra al hacer clic */
-  }
-
-  .menuitem {
-    margin: 5px 0;
-    border: none;
-  }
-
-  .main {
-    width: 100%;
-    float: none;
-    margin: 10px 0;
-    padding: 15px;
-  }
-
-#agregar_nota{
-width: 100%;
-height: 50%;
-box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
-background-color: white;
-padding: 10px 15px;
-
-}
-
-.container_datos{
-position: relative;
-width: 100%;
-height: 30px;
-margin: 15px;
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: #EEEEEE;
-}
-
-.container_datos input{
-    border: none;
-    outline: none;
-    width: 100%;
-    height: 100%;
-    background-color: inherit;
-    font-size: 15px;
-}
-
-}
-
-/* Contenido principal */
-.main {
-   float: left;
-   width: 60%;
-   padding: 30px;
-   background-color: #ffffff;
-   border-radius: 10px;
-   margin-top: 20px;
-   margin-bottom: 20px;
-   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.main h1 {
-   font-size: 36px;
-   color: #222;
-   margin-bottom: 15px;
-}
-
-.main p {
-   font-size: 18px;
-   color: #555;
-   margin-bottom: 20px;
-}
-#img{
-   height: 60px;
-   width: 60px;
-   border: 5px solid red;
-}
-.container_datos{
-width: 400px;
-height: 40px;
-margin-bottom: 10px;
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 8px;
-padding: 0 15px;
-background-color: #EEEEEE;
-}
-.container_datos input{
-    border: none;
-    outline: none;
-    width: 100%;
-    height: 100%;
-    background-color: inherit;
-}
-body{
-   background-color:   #F0F4F3;
-}
-
-#agregar_nota{
-    margin-left: 310px;
-    margin-top: 10px;
-    width: 1195px;
-height: 570px;
-    box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
-    background-color: white;
-    padding: 10px 15px;
-
-}
-
-.textarea-diagnostico {
+  position: absolute;
   width: 100%;
-  max-width: 400px;
-  height: 150px;
-  padding: 12px 16px;
-  font-size: 16px;
-  font-family: 'Segoe UI', sans-serif;
-  color: #333;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-  resize: vertical;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  left: 0;
+  top: 100%;
+  background: #1e90ff;
+  border-radius: 0 0 8px 8px;
+  list-style: none;
 }
 
-.textarea-diagnostico:focus {
-  border-color: #0078D4;
-  box-shadow: 0 0 5px rgba(0,120,212,0.3);
+.submenu:hover .submenu-list { display: block; }*/
+
+/* ===========================
+   CONTENIDO PRINCIPAL
+=========================== */
+
+#agregar_nota {
+  margin-left: 280px;
+  margin-top: 20px;
+  padding: 25px;
+  max-width: 900px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+.container_datos {
+  width: 100%;
+  height: 45px;
+  margin-bottom: 15px;
+  padding: 0 15px;
+  background: #EEEEEE;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.container_datos input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 16px;
   outline: none;
 }
 
-#diagnostico{
-   position: absolute;
-    top: 170px;
-    left: 740px;
+/* Textareas */
+.textarea-diagnostico {
+  width: 100%;
+  min-height: 150px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 12px;
+  background: #f9f9f9;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  resize: vertical;
 }
 
-#tratamiento{
-      position: absolute;
-    top: 330px;
-    left: 740px;
+/* SUBIR IMÁGENES */
+.upload-btn {
+  display: inline-block;
+  background: #4CAF50;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-  .upload-btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .upload-btn:hover {
-      background-color: #45a049;
-    }
-    input[type="file"] {
-      display: none;
-    }
-    .preview img {
-      margin: 10px;
-      width: 150px;
-      height: 150px;
-    }
-    .img-container {
-      display: inline-block;
-      position: relative;
-      margin: 10px;
-    }
-    .delete-btn {
-      position: absolute;
-      top: 5px;
-      right: 5px;
-      background: red;
-      color: white;
-      border: none;
-      cursor: pointer;
-      padding: 2px 6px;
-      border-radius: 3px;
-    }
+#preview img {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  border-radius: 8px;
+}
 
-    #BTNagregar{
-      position: absolute;
-  top: 650px;   
-  right: 30px;
-  width: 160px; 
-  height: 46px;
+/* BOTÓN GUARDAR */
+#BTNagregar {
+  width: 180px;
+  height: 45px;
   background: #1e90ff;
   border: none;
-  font-size: 15px;
+  border-radius: 40px;
   color: white;
-  border-radius: 50px;
-    }
+  font-size: 16px;
+  float: right;
+}
+#diagnostico,
+#tratamiento {
+  margin-top: 15px;
+}
+
+
+/*Media*/
+@media (max-width: 768px) {
+
+  .menu {
+    display: none;
+    width: 100%;
+    min-height: auto;
+  }
+
+  .menu.show { display: block; }
+
+  .hamburger { display: block; }
+
+  #agregar_nota {
+    margin-left: 0;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 100%;
+  }
+}
