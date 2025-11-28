@@ -3,6 +3,78 @@
    Sidebar + Header + Inputs + Layout Base y mas mamadas
 ========================================= */
 
+/* barra de navegacion */
+.menu {
+   float: left;
+   width: 20%;
+   background-color: lightskyblue;
+   color: white;
+   padding: 20px;
+   height: 100%;
+   min-height: 50vh;
+   border-radius: 30px;
+}
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.menuitem {
+   padding: 12px;
+   margin-top: 10px;
+   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+   text-transform: uppercase;
+   font-weight: bold;
+   transition: background 0.3s ease;
+}
+
+.menuitem:hover {
+   background-color: #1e90ff;
+   cursor: pointer;
+   color: black;
+}
+.menuitem:hover a {
+    color: black;
+}
+
+.submenu {
+  position: relative;
+}
+
+.submenu-list {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1e90ff;
+  padding: 0;
+  margin: 0;
+  display: none;
+  border-radius: 0 0 10px 10px;
+  z-index: 1000;
+  width: 100%;
+}
+
+.submenu-list li a {
+  display: block;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.submenu-list li a:hover {
+  background-color: #ffffff;
+  color: #1e90ff;
+}
+
+/* Mostrar submenú al pasar el mouse */
+.submenu:hover .submenu-list {
+  display: block;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -40,50 +112,12 @@ a {
       SIDEBAR
 */
 
-.menu {
-  width: 250px;
-  background: lightskyblue;
-  padding: 20px;
-  border-radius: 20px;
-  min-height: 90vh;
-}
-
-.menuitem {
-  padding: 12px 10px;
-  margin-top: 12px;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
-  font-weight: bold;
-  text-transform: uppercase;
-  color: white;
-}
-
-.menuitem:hover {
-  background: #1e90ff;
-}
-
-.menuitem a {
-  color: white;
-}
 
 /* 
       SUBMENU
  */
 
-.submenu {
-  position: relative;
-}
 
-.submenu-list {
-  list-style: none;
-  padding-left: 20px;
-  margin-top: 6px;
-  display: none;
-}
-
-.submenu:hover .submenu-list {
-  display: block;
-  position: static !important;
-}
 
 /* 
     CONTENEDOR BASE
@@ -97,6 +131,10 @@ a {
   margin-left: 280px;
   margin-top: 25px;
   margin-right: 20px;
+}
+
+input[type="file"] {
+  display: none; /* oculta el botón nativo */
 }
 
 /* 
@@ -210,6 +248,12 @@ a {
   font-size: 16px;
   float: right;
   margin-top: 20px;
+  cursor: pointer;
+   transition: transform 0.3s ease;
+}
+
+.save-btn:hover {
+  transform: scale(1.1); /* agranda el botón al 110% */
 }
 
 /* 
