@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/home_page.css">
+    <link rel="stylesheet" href="css/informe_especialista.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -40,8 +40,35 @@
     <a href="#">Perfil</a>
   </div>
 </div>
-         
-    <script src="js/script_home.js"></script>
+
+<!-- pide todos los datos que se enviaran a base de datos  --> 
+    <div id="agregar_nota">
+          <div class="container_datos" >
+<input type="date" placeholder="fecha" id="txtFecha" name="txtFecha" >
+</div>
+<!-- option  --> 
+  <label for="tipo-especialista">Tipo de estudio:</label>
+    <select id="tipo-especialista" name="tipo-especialista" class="select-especialista">
+      <option value="neurologo">Neurologo</option>
+      <option value="traumatologo">Traumatólogo</option>
+      <option value="cardiologo">Cardiólogo</option>
+      <option value="endocrinologo">Endocrinólogo</option>
+      <option value="psicologo">Psicologo</option>
+       <option value="Otro">Otro</option>
+    </select>
+    <br>
+<!-- boton para subir las imagenes  --> 
+ <label for="file-upload" class="upload-btn">
+ <ion-icon name="arrow-up-circle-outline"></ion-icon>   
+  Subir Imagenes</label>
+  <input id="file-upload" type="file" accept="image/*" multiple>
+<!-- aqui se veran todas las imagenes  --> 
+  <div  id="preview" class="preview"></div>
+ <input name="BTNagregar" type="submit"  id="BTNagregar" value="Guardar nota" ></input>
+</div>
+
+   <script src="js/estudios_imagen.js"></script>
+    <script src="js/pagina_agregar.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

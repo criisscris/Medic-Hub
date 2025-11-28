@@ -31,6 +31,7 @@
     <ul class="submenu-list">
       <li><a href="pagina_agregar.php">Notas médicas</a></li>
       <li><a href="estudios_imagen.php">Estudios de imagen</a></li>
+        <li><a href="informe_especialista.php">Informe de especialista</a></li>
     </ul>
   </div>
 
@@ -44,7 +45,7 @@
     <div id="agregar_nota">
 
   <div class="container_datos" >
-<input type="date"" placeholder="fecha" id="txtFecha" name="txtFecha" >
+<input type="date" placeholder="fecha" id="txtFecha" name="txtFecha" >
 </div>
 <!-- option  --> 
   <label for="tipo-estudio">Tipo de estudio:</label>
