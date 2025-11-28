@@ -1,77 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <link rel="stylesheet" href="css/pagina_agregar.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar nota médica</title>
+<!--Se cambio-->
+  <link rel="stylesheet" href="css/cssglobal.css">
+  <!--<link rel="stylesheet" href="css/pagina_agregar.css"> -->
 </head>
+
 <body>
-<div class="bo">
-  <h1>Medic-hub</h1>
-  <!-- Botón hamburguesa. chupala -->
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-</div>
 
-<!-- barra de navegacion lateral  --> 
-<div class="menu" id="menu">
-  <div class="menuitem">
-    <ion-icon name="home-outline"></ion-icon>
-    <a href="home_page.php">Menu</a>
+  <div class="bo">
+    <h1>Medic-hub</h1>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
   </div>
 
-  <div class="menuitem">
-    <ion-icon name="document-text-outline"></ion-icon>
-    <a href="#">Tus notas</a>
+  <!-- MENU -->
+  <div class="menu" id="menu">
+    <div class="menuitem"><ion-icon name="home-outline"></ion-icon><a href="home_page.php">Menu</a></div>
+    <div class="menuitem"><ion-icon name="document-text-outline"></ion-icon><a href="#">Tus notas</a></div>
+
+    <div class="menuitem submenu">
+      <ion-icon name="add-circle-outline"></ion-icon>
+      <a href="#">Agregar notas</a>
+      <ul class="submenu-list">
+        <li><a href="pagina_agregar.php">Notas médicas</a></li>
+        <li><a href="estudios_imagen.php">Estudios de imagen</a></li>
+      </ul>
+    </div>
+
+    <div class="menuitem"><ion-icon name="person-outline"></ion-icon><a href="#">Perfil</a></div>
+  </div>
+  <!--Overlay-->
+  <div class="menu-overlay" id="menu-overlay"></div>
+
+  <div class="form-container">
+
+      <h2>Agregar nota médica</h2>
+
+      <div class="input-box">
+        <label for="txtTitulo">Título</label>
+        <input type="text" id="txtTitulo">
+      </div>
+
+      <div class="input-box">
+        <label for="txtFecha">Fecha</label>
+        <input type="date" id="txtFecha">
+      </div>
+
+      <div class="input-box">
+        <label for="txtPeso">Peso (kg)</label>
+        <input type="number" step="0.01" id="txtPeso">
+      </div>
+
+      <div class="input-box">
+        <label for="txtTemperatura">Temperatura (°C)</label>
+        <input type="number" step="0.01" id="txtTemperatura">
+      </div>
+
+      <div class="input-box">
+        <label for="txtAltura">Altura (cm)</label>
+        <input type="number" step="0.01" id="txtAltura">
+      </div>
+
+      <div class="textarea-box">
+        <label for="diagnostico">Diagnóstico</label>
+        <textarea id="diagnostico"></textarea>
+      </div>
+
+      <div class="textarea-box">
+        <label for="tratamiento">Tratamiento y recomendaciones</label>
+        <textarea id="tratamiento"></textarea>
+      </div>
+
+      <div class="upload-box">
+        <label for="file-upload" class="upload-btn">
+          <ion-icon name="arrow-up-circle-outline"></ion-icon>
+          Subir imágenes
+        </label>
+        <input id="file-upload" type="file" accept="image/*" multiple>
+      </div>
+
+      <div id="preview" class="preview"></div>
+
+      <button class="save-btn">Guardar nota</button>
+    
   </div>
 
-  <div class="menuitem submenu">
-    <ion-icon name="add-circle-outline"></ion-icon>
-    <a href="#">Agregar notas</a>
-    <ul class="submenu-list">
-      <li><a href="pagina_agregar.php">Notas médicas</a></li>
-      <li><a href="estudios_imagen.php">Estudios de imagen</a></li>
-    </ul>
-  </div>
+  <script src="js/pagina_agregar.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-  <div class="menuitem">
-    <ion-icon name="person-outline"></ion-icon>
-    <a href="#">Perfil</a>
-  </div>
-</div>
-
-<!-- pide todos los datos que se enviaran a base de datos  --> 
-    <div id="agregar_nota">
-    <div class="container_datos" >
-<input type="text" placeholder="Titulo" id="txtTitulo" name="titulo">
-</div>
-    <div class="container_datos" >
-<input type="date" placeholder="Fecha" id="txtFecha" name="fecha">
-</div>
-    <div class="container_datos" >
-<input type="number" step="0.01" placeholder="Peso" id="txtPeso" name="peso">
-</div>
- <div class="container_datos" >
-<input type="number" step="0.01" placeholder="Temperatura" id="txtTemperatura" name="temperatura">
-</div>
- <div class="container_datos" >
-<input type="number" step="0.01" placeholder="Altura" id="txtAltura" name="Altura">
-</div>
-<textarea id="diagnostico" class="textarea-diagnostico" placeholder="Escriba el diagnostico"></textarea>
-<textarea id="tratamiento" class="textarea-diagnostico" placeholder="Tratamiento y recomendaciones"></textarea><br>
-<!-- boton para subir las imagenes  --> 
- <label for="file-upload" class="upload-btn">
- <ion-icon name="arrow-up-circle-outline"></ion-icon>   
-  Subir Imagenes</label>
-  <input id="file-upload" type="file" accept="image/*" multiple>
-<!-- aqui se veran todas las imagenes  --> 
-  <div  id="preview" class="preview"></div>
- <input name="BTNagregar" type="submit"  id="BTNagregar" value="Guardar nota" ></input>
-</div>
-
-
-    <script src="js/pagina_agregar.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

@@ -48,7 +48,23 @@ a{
 .menuitem:hover a {
     color: black;
 }
+/* Submenu */
+.submenu {
+  position: relative;
+}
 
+.submenu-list {
+  list-style: none;
+  padding-left: 15px;
+  margin: 5px 0 0 0;
+  display: none;         /* Oculto por defecto */
+}
+
+.submenu:hover .submenu-list {
+  display: block;        /* Se expande hacia abajo */
+  position: static !important;   /* 🔥 FIX principal */
+}
+/* Se cambio (VERSION ANTIGUA QUE SE DEJA EN FORMA DE COMENTARIO)
 .submenu {
   position: relative;
 }
@@ -84,7 +100,7 @@ a{
 /* Mostrar submenú al pasar el mouse */
 .submenu:hover .submenu-list {
   display: block;
-}
+} */
 
 /* Contenido principal */
 .main {
@@ -122,7 +138,7 @@ a{
   cursor: pointer;
   margin-left: auto;
 }
-
+/*Media*/
 /* 📱 Teléfonos grandes (iPhone XR, 8+, Galaxy Fold cerrado) */
 @media (max-width: 414px) {
   .bo {

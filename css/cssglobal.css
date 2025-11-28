@@ -1,0 +1,260 @@
+/* =========================================
+   MedicHub — GLOBAL 🔥🔥🔥
+   Sidebar + Header + Inputs + Layout Base y mas mamadas
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #F0F4F3;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 
+      HEADER
+*/
+.bo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: lightskyblue;
+  padding: 20px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+/* 
+      SIDEBAR
+*/
+.menu {
+  position: fixed;
+  top: 90px;               /* debajo del header(quedaba mal antes) */
+  left: 0;
+  height: calc(100vh - 90px);
+  overflow-y: auto;
+  width: 250px;
+  background: lightskyblue;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.menuitem {
+  padding: 12px 10px;
+  margin-top: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+}
+
+.menuitem:hover {
+  background: #1e90ff;
+}
+
+.menuitem a {
+  color: white;
+}
+
+/* 
+      SUBMENU
+ */
+
+.submenu {
+  position: relative;
+}
+
+.submenu-list {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 6px;
+  display: none;
+}
+
+.submenu:hover .submenu-list {
+  display: block;
+  position: static !important;
+}
+
+/* 
+    CONTENEDOR BASE
+ */
+.container-page {
+  margin-left: 280px;
+  margin-top: 25px;
+  margin-right: 20px;
+}
+
+/* 
+    Contenedores del form
+*/
+.form-container,
+.container-page {
+  margin-left: 280px;
+  margin-top: 30px;
+  margin-right: 20px;
+}
+
+.form-box {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  max-width: 900px;
+}
+
+/* INPUTS */
+.input-box {
+  width: 100%;
+  height: 45px;
+  margin-bottom: 15px;
+  padding: 0 15px;
+  background: #EEEEEE;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.input-box input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+}
+
+/* SELECT(seleccionar) */
+.select-box select {
+  width: 100%;
+  height: 45px;
+  margin-bottom: 15px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* TEXTAREA */
+.textarea-box textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 12px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  background: #f9f9f9;
+  resize: vertical;
+  font-size: 16px;
+}
+
+/* UPLOAD(Subir) */
+.upload-btn {
+  display: inline-block;
+  background: #4CAF50;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.preview img {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.img-container {
+  position: relative;
+  display: inline-block;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 3px 7px;
+  border-radius: 3px;
+}
+
+/* BUTTON SAVE(salvar/guardar) */
+.save-btn {
+  width: 180px;
+  height: 45px;
+  background: #1e90ff;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  font-size: 16px;
+  float: right;
+  margin-top: 20px;
+}
+
+/* 
+      MEDIA
+*/
+@media (max-width: 768px) {
+
+  /* Mostrar botón hamburguesa */
+  .hamburger {
+    display: block;
+  }
+
+  /*  MENÚ EN MÓVIL */
+  .menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* oculto */
+    width: 250px;
+    height: 100vh;
+    background: lightskyblue;
+    border-radius: 0;
+    padding: 20px;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  /* Cuando está abierto */
+  .menu.show {
+    left: 0;
+  }
+
+  /* Overlay */
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 900;
+  }
+
+  .menu.show + .menu-overlay {
+    display: block;
+  }
+
+  /* Ajustar contenido en móvil */
+  .container-page,
+  .form-container {
+    margin-left: 0 !important;
+    margin-top: 20px;
+  }
+}

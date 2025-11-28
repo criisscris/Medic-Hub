@@ -61,3 +61,21 @@ input.addEventListener("change", () => {
   mostrarPreview(input.files);
   input.value = ""; // limpia el input para poder volver a seleccionar
 });
+//pal Css
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  const overlay = document.getElementById("menu-overlay");
+
+  menu.classList.toggle("show");
+
+  if (menu.classList.contains("show")) {
+    overlay.style.display = "block";
+  } else {
+    overlay.style.display = "none";
+  }
+}
+
+document.getElementById("menu-overlay").onclick = () => {
+  document.getElementById("menu").classList.remove("show");
+  document.getElementById("menu-overlay").style.display = "none";
+};

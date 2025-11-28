@@ -1,3 +1,218 @@
+/* ===========================
+   RESETEO GENERAL
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background-color: #F0F4F3;
+    font-family: Arial, sans-serif;
+}
+
+a { text-decoration: none; }
+
+/* ===========================
+   HEADER Y MENU LATERAL
+=========================== */
+
+.bo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: lightskyblue;
+  padding: 20px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Barra lateral */
+.menu {
+  width: 250px;
+  background: lightskyblue;
+  padding: 20px;
+  border-radius: 20px;
+  min-height: 90vh;
+}
+
+.menuitem {
+  padding: 12px;
+  margin-top: 12px;
+  color: white;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.menuitem a { color: white; }
+
+.menuitem:hover {
+  background: #1e90ff;
+}
+
+/* ===========================
+   SUBMENU (arreglado)
+=========================== */
+
+.submenu {
+  position: relative;
+}
+
+.submenu-list {
+  list-style: none;
+  padding-left: 15px;
+  margin: 5px 0 0 0;
+  display: none; /* oculto por defecto */
+}
+
+/* 🔧 Submenu expandido sin tapar elementos */
+.submenu:hover .submenu-list {
+  display: block;
+  position: static !important;
+}
+
+/* ===========================
+   CONTENEDOR PRINCIPAL
+=========================== */
+
+#agregar_nota {
+  margin-left: 280px;
+  margin-top: 20px;
+  padding: 25px;
+  max-width: 900px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+/* ===========================
+   Inputs
+=========================== */
+
+.container_datos {
+  width: 100%;
+  height: 45px;
+  margin-bottom: 15px;
+  padding: 0 15px;
+  background: #EEEEEE;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.container_datos input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Select */
+.select-estudio {
+  margin: 10px 0 15px 0;
+  width: 100%;
+  height: 45px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* ===========================
+   SUBIR ARCHIVOS
+=========================== */
+
+.upload-btn {
+  display: inline-block;
+  background: #4CAF50;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.preview img {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.img-container {
+  display: inline-block;
+  position: relative;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 3px 7px;
+  border-radius: 3px;
+}
+
+/* ===========================
+   BOTÓN GUARDAR
+=========================== */
+
+#BTNagregar {
+  width: 180px;
+  height: 45px;
+  background: #1e90ff;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  font-size: 16px;
+  float: right;
+  margin-top: 20px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 768px) {
+
+  .menu {
+    display: none;
+    width: 100%;
+    min-height: auto;
+  }
+
+  .menu.show { display: block; }
+
+  .hamburger { display: block; }
+
+  #agregar_nota {
+    margin-left: 0;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.select-estudio {
+  width: 100%;
+  height: 45px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  margin: 10px 0 20px 0;
+  background: white;
+}
+/* Lo cambie (VERSION ANTIGUA QUE SE DEJA EN FORMA DE COMENTARIO)
 * {
 margin: 0;
 padding: 0;
@@ -17,7 +232,7 @@ a{
          padding: 20px;
 }
 
-/* barra de navegacion */
+ barra de navegacion 
 .menu {
    float: left;
    width: 20%;
@@ -83,12 +298,12 @@ a{
   color: #1e90ff;
 }
 
-/* Mostrar submenú al pasar el mouse */
+ /* Mostrar submenú al pasar el mouse 
 .submenu:hover .submenu-list {
   display: block;
-}
+} */
 
-/* Botón hamburguesa oculto por defecto */
+/* Botón hamburguesa oculto por defecto 
 .hamburger {
   display: none;
   font-size: 30px;
@@ -113,12 +328,12 @@ height: 560px;
 
 }
 
-/*  vista previa de las imagenes y los archivos pdf   */
+/*  vista previa de las imagenes y los archivos pdf   
 .preview a {
   display: inline-block;
   margin: 10px;
   padding: 12px 18px;
-  background: #f0f8ff; /* azul muy claro */
+  background: #f0f8ff; /* azul muy claro 
   border: 1px solid #1e90ff;
   border-radius: 8px;
   color: #1e90ff;
@@ -129,10 +344,10 @@ height: 560px;
   max-width: 180px;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* corta nombres largos */
+  text-overflow: ellipsis; /* corta nombres largos 
 }
 
-/* Hover más atractivo */
+/* Hover más atractivo 
 .preview a:hover {
   background: #1e90ff;
   color: #fff;
@@ -140,7 +355,7 @@ height: 560px;
   transform: translateY(-2px);
 }
 
-/* Contenedor de archivo (imagen o enlace) */
+/* Contenedor de archivo (imagen o enlace) 
 .img-container {
   display: inline-block;
   position: relative;
@@ -151,7 +366,7 @@ height: 560px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* Botón eliminar más moderno */
+/* Botón eliminar más moderno 
 .delete-btn {
   position: absolute;
   top: 5px;
@@ -198,7 +413,7 @@ height: 560px;
     }
 
     input[type="file"] {
-  display: none; /* oculta el botón nativo */
+  display: none; /* oculta el botón nativo 
 }
 
     .preview img {
@@ -207,7 +422,7 @@ height: 560px;
       height: 150px;
     }
 
-    /*  estilo de los inputs  */
+    /*  estilo de los inputs  
     .container_datos{
 width: 400px;
 height: 40px;
@@ -228,7 +443,7 @@ background-color: #EEEEEE;
 
 } 
 
-/* Estilo del label */
+/* Estilo del label 
 
 .select-estudio {
 padding: 0.6rem 0.8rem;
@@ -245,3 +460,7 @@ outline: none;
 border-color: #1e6fa8;
 box-shadow: 0 0 6px rgba(30, 111, 168, 0.4);
 }
+
+
+
+*/
