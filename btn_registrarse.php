@@ -13,7 +13,8 @@ $tipo_sangre = $_POST["value_sangre"];
 $genero = $_POST["value_genero"];
 
 $sql = $conexion->query(" insert into usuario(user, pass)values('$usuario','$psw')");
-$sql2 = $conexion->query(" insert into datos_generales(nombre, Apaterno, Amaterno, tipo_sangre, fechNacimiento, user, genero)values('$nombre','$apellido_paterno','$apellido_materno','$fecha_nacimiento','$tipo_sangre','$genero')");
+$sql2 = $conexion->query("INSERT INTO datos_generales(nombre, Apaterno, Amaterno, tipo_sangre, fechNacimiento, user, genero) 
+VALUES ('$nombre','$apellido_paterno','$apellido_materno','$tipo_sangre','$fecha_nacimiento','$usuario','$genero')");
 if ($sql == 1) {
  echo '<div class="alert alert-sucess" >Cuenta creado correctamente</div>';
 } else {

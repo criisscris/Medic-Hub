@@ -1,21 +1,9 @@
-* {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-}
-a{
-    text-decoration: none;
-}
+/* =========================================
+   MedicHub — GLOBAL 🔥🔥🔥
+   Sidebar + Header + Inputs + Layout Base y mas mamadas
+========================================= */
 
-.bo {
-   display: flex;     
- font-size: 50px;
-    width: 100%;
-     height: 150px;
-     background-color: lightskyblue;
-         padding: 20px;
-}
-/* Menú lateral */
+/* barra de navegacion */
 .menu {
    float: left;
    width: 20%;
@@ -48,23 +36,7 @@ a{
 .menuitem:hover a {
     color: black;
 }
-/* Submenu */
-.submenu {
-  position: relative;
-}
 
-.submenu-list {
-  list-style: none;
-  padding-left: 15px;
-  margin: 5px 0 0 0;
-  display: none;         /* Oculto por defecto */
-}
-
-.submenu:hover .submenu-list {
-  display: block;        /* Se expande hacia abajo */
-  position: static !important;   /* 🔥 FIX principal */
-}
-/* Se cambio (VERSION ANTIGUA QUE SE DEJA EN FORMA DE COMENTARIO)
 .submenu {
   position: relative;
 }
@@ -100,92 +72,388 @@ a{
 /* Mostrar submenú al pasar el mouse */
 .submenu:hover .submenu-list {
   display: block;
-} */
-
-/* Contenido principal */
-.main {
-   float: left;
-   width: 60%;
-   padding: 30px;
-   background-color: #ffffff;
-   border-radius: 10px;
-   margin-top: 20px;
-   margin-bottom: 20px;
-   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.main h1 {
-   font-size: 36px;
-   color: #222;
-   margin-bottom: 15px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.main p {
-   font-size: 18px;
-   color: #555;
-   margin-bottom: 20px;
-}
-#img{
-   height: 60px;
-   width: 60px;
-   border: 5px solid red;
+body {
+  background: #F0F4F3;
+  font-family: Arial, sans-serif;
 }
 
-/* Botón hamburguesa oculto por defecto */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 
+      HEADER
+*/
+.bo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: lightskyblue;
+  padding: 20px;
+}
+
 .hamburger {
   display: none;
-  font-size: 30px;
+  font-size: 32px;
   cursor: pointer;
-  margin-left: auto;
 }
-/*Media*/
-/* 📱 Teléfonos grandes (iPhone XR, 8+, Galaxy Fold cerrado) */
-@media (max-width: 414px) {
-  .bo {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 30px;
-    height: auto;
-    padding: 10px;
-  }
+
+/* 
+      SIDEBAR
+*/
 
 
-.menu.show {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
+/* 
+      SUBMENU
+ */
+
+
+
+/* 
+    CONTENEDOR BASE
+ */
+.page {
+  display: flex;
+  min-height: calc(100vh - 90px); /* alto total menos header */
 }
-  .hamburger {
-    display: block; /* aparece el botón */
-  }
 
-.menu {
-  display: none;
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: all 0.3s ease;
+.container-page {
+  margin-left: 280px;
+  margin-top: 25px;
+  margin-right: 20px;
+}
+
+input[type="file"] {
+  display: none; /* oculta el botón nativo */
+}
+
+/* 
+    Contenedores del form
+*/
+.form-container {
+  flex: 1;              /* ocupa todo el espacio restante */
+  margin: 25px 20px;    /* separaciones */
+}
+
+.container-page,
+.form-container {
+  flex: 1;              /* ocupa todo el espacio restante */
+  margin: 25px 20px;    /* separaciones */
+}
+
+.form-box {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  max-width: 900px;
+}
+
+/* INPUTS */
+.input-box {
   width: 100%;
-  float: none;
-  border-radius: 0;
-  padding: 10px;
-  text-align: center;
-  background-color: lightskyblue;
+  height: 45px;
+  margin-bottom: 15px;
+  padding: 0 15px;
+  background: #EEEEEE;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
 }
+
+.input-box input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+}
+
+/* SELECT(seleccionar) */
+.select-box select {
+  width: 100%;
+  height: 45px;
+  margin-bottom: 15px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* TEXTAREA */
+.textarea-box textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 12px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  background: #f9f9f9;
+  resize: vertical;
+  font-size: 16px;
+}
+
+/* UPLOAD(Subir) */
+.upload-btn {
+  display: inline-block;
+  background: #4CAF50;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.preview img {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.img-container {
+  position: relative;
+  display: inline-block;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 3px 7px;
+  border-radius: 3px;
+}
+
+/* BUTTON SAVE(salvar/guardar) */
+.save-btn {
+  width: 180px;
+  height: 45px;
+  background: #1e90ff;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  font-size: 16px;
+  float: right;
+  margin-top: 20px;
+  cursor: pointer;
+   transition: transform 0.3s ease;
+}
+
+.save-btn:hover {
+  transform: scale(1.1); /* agranda el botón al 110% */
+}
+
+/* 
+      MEDIA
+*/
+@media (max-width: 768px) {
+  .page {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background: lightskyblue;
+    border-radius: 0;
+    padding: 20px;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
 
   .menu.show {
-    display: block; /* se muestra al hacer clic */
+    left: 0;
   }
 
-  .menuitem {
-    margin: 5px 0;
-    border: none;
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0; /* shorthand para top/left/right/bottom */
+    background: rgba(0,0,0,0.4);
+    z-index: 900;
   }
 
-  .main {
-    width: 100%;
-    float: none;
-    margin: 10px 0;
-    padding: 15px;
+  .menu.show + .menu-overlay {
+    display: block;
+  }
+
+  .form-container {
+    margin-left: 0 !important;
+    margin-top: 20px;
+    padding: 0 15px;
+  }
+
+/* --- Adaptación de la Tarjeta de Perfil --- */
+  .carta-perfil {
+    /* Centrado horizontal*/
+    left: 40%;
+    transform: translateX(-40%); 
+    /* Posición vertical: 10% más arriba */
+    top: 10%; 
+    /* Reducción del tamaño de la tarjeta */
+    width: 90%; 
+    max-width: 350px; 
+    height: auto; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  /* --- Encabezado --- */
+  .header {
+    height: 80px; 
+  }
+
+  /* --- Avatar --- */
+  .avatar {
+    width: 80px; /* Reducimos el tamaño del avatar */
+    height: 80px;
+    margin: -40px auto 10px; 
+  }
+
+  /* --- Tipografía --- */
+  h2 {
+    font-size: 18px; 
+  }
+  .role {
+    font-size: 13px; 
+  }
+
+  /* --- Botones --- */
+  .buttons {
+    flex-direction: column; 
+    gap: 8px; /* Espacio reducido entre botones */
+    padding: 15px; /* Más padding para que los botones tengan espacio */
+  }
+
+  .btn {
+    padding: 10px; /* Hacemos los botones más grandes verticalmente para el toque táctil */
+    width: 100%; /* Ocupan todo el ancho del contenedor de botones */
+    font-size: 14px;
+  }
+    
+  /* --- Botón de Alternancia (Opcional) --- */
+  .toggle-btn {
+    top: 5px; /* Lo subimos un poco */
+    left: 50%;
+    transform: translateX(-50%); /* Centrado horizontal */
+    z-index: 1000;
+  }
+}
+/*  Aqui termina el estilo global  */
+/*  diseño de la carta perfil  */
+.carta-perfil {
+ display: none;   /* ✅ oculta al inicio */
+  position: fixed;
+top: 20%;
+  left: 40%;
+  width: 450px;
+  height: 450px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  background-color: #fff;
+  z-index: 3;
+animation: fadeInSlide 0.4s ease-out forwards;
+}
+
+.header {
+  height: 100px;
+  background: repeating-linear-gradient(
+    45deg,
+    #87CEFA,
+    #1E90FF 20px,
+    #87CEFA 20px,
+    #1E90FF 40px
+  );
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  background-image: url('/Proyecto_mimedic/img/perfil.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin: -50px auto 10px;
+  border: 4px solid white;
+}
+
+h2 {
+  margin: 10px 0 5px;
+  font-size: 20px;
+  color: #333;
+}
+
+.role {
+  color: #00aaff;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+#BTNcerrar_sesion{
+  padding: 15px 30px;    
+  font-size: 18px; 
+  border-radius: 10px;
+  background-color: transparent;
+  border: solid 2px red;
+  transition: transform 0.3s ease;
+}
+
+#BTNcerrar_sesion:hover{
+  background-color: red;
+  border: solid 2px white;
+  transform: scale(1.2);
+}
+
+
+/*  boton para dejar de ver la tarjeta de usuario  */
+.toggle-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  padding: 8px 12px;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ---  animacion del div carta-perfil --- */
+@keyframes fadeInSlide {
+  /* Estado inicial de la animación (oculto y ligeramente desplazado) */
+  from {
+    opacity: 0;
+    /* Movemos la tarjeta 20px hacia arriba desde su posición final */
+    transform: translate(-50%, 10px); 
+  }
+  /* Estado final de la animación (visible y en la posición correcta) */
+  to {
+    opacity: 1;
+    /* Posición final centrada */
+    transform: translate(-40%, 0); 
   }
 }
