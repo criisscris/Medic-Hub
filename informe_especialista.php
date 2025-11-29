@@ -7,6 +7,16 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- esto sirve para no dejar ingresar datos a menos que se tenga una sesion iniciada -->
+  <?php 
+  session_start();
+include 'basedatos.php';
+
+if (!isset($_SESSION['user'])) {
+    header("Location: loginpage.php");
+    exit();
+}
+  ?>
  <div class="bo">
     <h1>Medic-hub</h1>
     <div class="hamburger" onclick="toggleMenu()">☰</div>
