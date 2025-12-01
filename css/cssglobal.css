@@ -1,80 +1,11 @@
-/* =========================================
+/*
    MedicHub — GLOBAL 🔥🔥🔥
-   Sidebar + Header + Inputs + Layout Base y mas mamadas
-========================================= */
+   Sidebar + Header + Inputs + Layout Base
+*/
 
-/* barra de navegacion */
-.menu {
-   float: left;
-   width: 20%;
-   background-color: lightskyblue;
-   color: white;
-   padding: 20px;
-   height: 100%;
-   min-height: 50vh;
-   border-radius: 30px;
-}
-.menu a {
-    color: white;
-    text-decoration: none;
-}
-
-.menuitem {
-   padding: 12px;
-   margin-top: 10px;
-   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-   text-transform: uppercase;
-   font-weight: bold;
-   transition: background 0.3s ease;
-}
-
-.menuitem:hover {
-   background-color: #1e90ff;
-   cursor: pointer;
-   color: black;
-}
-.menuitem:hover a {
-    color: black;
-}
-
-.submenu {
-  position: relative;
-}
-
-.submenu-list {
-  list-style: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #1e90ff;
-  padding: 0;
-  margin: 0;
-  display: none;
-  border-radius: 0 0 10px 10px;
-  z-index: 1000;
-  width: 100%;
-}
-
-.submenu-list li a {
-  display: block;
-  padding: 10px;
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  border-top: 1px solid rgba(255,255,255,0.2);
-}
-
-.submenu-list li a:hover {
-  background-color: #ffffff;
-  color: #1e90ff;
-}
-
-/* Mostrar submenú al pasar el mouse */
-.submenu:hover .submenu-list {
-  display: block;
-}
-
-
+/* ============================
+   Reset & Base
+============================ */
 * {
   margin: 0;
   padding: 0;
@@ -91,81 +22,125 @@ a {
   color: inherit;
 }
 
-/* 
-      HEADER
-*/
+/* ============================
+   Header
+============================ */
 .bo {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: lightskyblue;
   padding: 20px;
+  position: relative;
+  z-index: 1100; /* asegura que el header quede arriba */
 }
 
-.hamburger {
+
+/* ============================
+   Sidebar / Menu
+============================ */
+.menu {
+  float: left;
+  width: 20%;
+  background: lightskyblue;
+  color: white;
+  padding: 20px;
+  min-height: 50vh;
+  border-radius: 30px;
+}
+
+.menu a {
+  color: white;
+}
+
+.menuitem {
+  padding: 12px;
+  margin-top: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.menuitem:hover {
+  background: #1e90ff;
+  color: black;
+}
+
+.menuitem:hover a {
+  color: black;
+}
+
+/* Submenu */
+.submenu {
+  position: relative;
+}
+
+.submenu-list {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #1e90ff;
+  padding: 0;
+  margin: 0;
   display: none;
-  font-size: 32px;
-  cursor: pointer;
+  border-radius: 0 0 10px 10px;
+  z-index: 1000;
+  width: 100%;
 }
 
-/* 
-      SIDEBAR
-*/
+.submenu-list li a {
+  display: block;
+  padding: 10px;
+  color: white;
+  font-size: 14px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
 
+.submenu-list li a:hover {
+  background: #fff;
+  color: #1e90ff;
+}
 
-/* 
-      SUBMENU
- */
+.submenu:hover .submenu-list {
+  display: block;
+}
 
-
-
-/* 
-    CONTENEDOR BASE
- */
+/* ============================
+   Layout
+============================ */
 .page {
   display: flex;
-  min-height: calc(100vh - 90px); /* alto total menos header */
+  min-height: calc(100vh - 90px);
 }
 
 .container-page {
-  margin-left: 280px;
-  margin-top: 25px;
-  margin-right: 20px;
+  margin: 25px 20px 0 280px;
 }
 
-input[type="file"] {
-  display: none; /* oculta el botón nativo */
-}
-
-/* 
-    Contenedores del form
-*/
 .form-container {
-  flex: 1;              /* ocupa todo el espacio restante */
-  margin: 25px 20px;    /* separaciones */
-}
-
-.container-page,
-.form-container {
-  flex: 1;              /* ocupa todo el espacio restante */
-  margin: 25px 20px;    /* separaciones */
+  flex: 1;
+  margin: 25px 20px;
 }
 
 .form-box {
-  background: white;
+  background: #fff;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.15);
   max-width: 900px;
 }
 
-/* INPUTS */
+/* ============================
+   Inputs
+============================ */
 .input-box {
   width: 100%;
   height: 45px;
   margin-bottom: 15px;
   padding: 0 15px;
-  background: #EEEEEE;
+  background: #eee;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -179,30 +154,31 @@ input[type="file"] {
   outline: none;
 }
 
-/* SELECT(seleccionar) */
-.select-box select {
+.select-box select,
+.textarea-box textarea {
   width: 100%;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.select-box select {
   height: 45px;
   margin-bottom: 15px;
   padding: 8px;
-  border-radius: 6px;
   border: 1px solid #ccc;
-  font-size: 16px;
 }
 
-/* TEXTAREA */
 .textarea-box textarea {
-  width: 100%;
   min-height: 150px;
   padding: 12px;
   border: 1px solid #bbb;
-  border-radius: 8px;
   background: #f9f9f9;
   resize: vertical;
-  font-size: 16px;
 }
 
-/* UPLOAD(Subir) */
+/* ============================
+   Upload
+============================ */
 .upload-btn {
   display: inline-block;
   background: #4CAF50;
@@ -237,7 +213,9 @@ input[type="file"] {
   border-radius: 3px;
 }
 
-/* BUTTON SAVE(salvar/guardar) */
+/* ============================
+   Buttons
+============================ */
 .save-btn {
   width: 180px;
   height: 45px;
@@ -249,23 +227,80 @@ input[type="file"] {
   float: right;
   margin-top: 20px;
   cursor: pointer;
-   transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .save-btn:hover {
-  transform: scale(1.1); /* agranda el botón al 110% */
+  transform: scale(1.1);
 }
 
-/* 
-      MEDIA
-*/
+/* ============================
+   File Box
+============================ */
+.file-box {
+  display: inline-flex;
+  align-items: center;
+  width: 200px;
+  padding: 12px;
+  margin: 10px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.file-box:hover {
+  transform: scale(1.05);
+}
+
+.file-icon {
+  font-size: 28px;
+  margin-right: 10px;
+}
+
+.file-pdf { color: #e74c3c; }
+.file-word { color: #2980b9; }
+
+.file-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ============================
+   Overlay
+============================ */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 900;
+}
+
+.menu-overlay.show {
+  display: block;
+}
+
+.hamburger {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+  margin-left: auto; /* 🔥 si lo necesitas */
+}
+/* ============================
+   Responsive
+============================ */
 @media (max-width: 768px) {
   .page {
     display: block;
   }
 
   .hamburger {
-    display: block;
+    display: block; /* aparece en móvil */
   }
 
   .menu {
@@ -277,74 +312,19 @@ input[type="file"] {
     background: lightskyblue;
     border-radius: 0;
     padding: 20px;
-    z-index: 1000;
+    z-index: 1150; /*Mas alto que el Header*/
     transition: left 0.3s ease;
+    overflow-y: auto;
+    text-align: left;
+    float: none; /* 🔥 evita que herede el float del desktop */
   }
 
   .menu.show {
     left: 0;
   }
 
-  .menu-overlay {
-    display: none;
-    position: fixed;
-    inset: 0; /* shorthand para top/left/right/bottom */
-    background: rgba(0,0,0,0.4);
-    z-index: 900;
-  }
-
-  .menu.show + .menu-overlay {
-    display: block;
-  }
-
   .form-container {
-    margin-left: 0 !important;
-    margin-top: 20px;
+    margin: 20px 15px 0;
     padding: 0 15px;
   }
-}
-
-
-
-/* Caja genérica para archivos */
-.file-box {
-  display: inline-flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 200px;
-  padding: 12px;
-  margin: 10px;
-  border-radius: 8px;
-  background: #ffffff;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  font-size: 14px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.file-box:hover {
-  transform: scale(1.05);
-}
-
-/* Ícono del archivo */
-.file-icon {
-  font-size: 28px;
-  margin-right: 10px;
-}
-
-/* Colores según tipo */
-.file-pdf {
-  color: #e74c3c; /* rojo PDF */
-}
-
-.file-word {
-  color: #2980b9; /* azul Word */
-}
-
-/* Nombre del archivo */
-.file-name {
-  flex: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }

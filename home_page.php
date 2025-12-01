@@ -129,7 +129,7 @@
 
           <div class="footer-section">
             <h4>Contacto</h4>
-            <p>Email: contacto@medic-hub.com</p>
+            <p>Email: medic.hub12345@gmail.com</p>
             <p>Tel: +52 744 123 4567</p>
           </div>
 
@@ -155,8 +155,8 @@
   <div class="menu-overlay" id="menu-overlay"></div>
 
   <!-- Scripts -->
-  <script src="js/script_home.js"></script>
   <script src="js/menu_toggle.js"></script>
+  <!--<script src="js/script_home.js"></script> -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
