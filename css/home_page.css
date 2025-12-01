@@ -60,79 +60,28 @@
   max-width: 800px;
   margin: 0 auto;
 }
-.Beneficio {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  font-size: 18px;
+.menuitem:hover a {
+    color: black;
+}
+/* Submenu */
+.submenu {
   position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
 }
 
-.Beneficio:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+.submenu-list {
+  list-style: none;
+  padding-left: 15px;
+  margin: 5px 0 0 0;
+  display: none;         /* Oculto por defecto */
 }
 
-.beneficio-info {
-  opacity: 0;
-  max-height: 0;
-  transition: opacity 0.3s ease, max-height 0.3s ease;
-  font-size: 14px;
-  margin-top: 10px;
-  color: #555;
+.submenu:hover .submenu-list {
+  display: block;        /* Se expande hacia abajo */
+  position: static !important;   /* 🔥 FIX principal */
 }
-
-.Beneficio:hover .beneficio-info {
-  opacity: 1;
-  max-height: 300px; /* se expande */
-}
-
-.beneficio-info img {
-  width: 60px;
-  margin-bottom: 10px;
-}
-
-/* Como funciona */
-.ComoFunciona {
-  background: #fff;
-  padding: 60px 20px;
-  text-align: center;
-}
-.ComoFunciona h2 {
-  font-size: 32px;
-  margin-bottom: 30px;
-}
-.Pasos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-.Paso {
-  background: #1e90ff;
-  color: white;
-  padding: 20px;
-  border-radius: 12px;
-  width: 220px;
-  font-size: 18px;
-}
-
-/* FOOTER(La parte de abajo) */
-.footer {
-  background: #1e90ff;
-  color: white;
-  padding: 40px 20px 20px;
-}
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+/* Se cambio (VERSION ANTIGUA QUE SE DEJA EN FORMA DE COMENTARIO)
+.submenu {
+  position: relative;
 }
 .footer-section h3,
 .footer-section h4 {
@@ -168,87 +117,103 @@
   border-top: 1px solid rgba(255,255,255,0.3);
   padding-top: 15px;
   font-size: 14px;
-}
-.menu-extra {
-  margin-top: 30px;
-  padding: 15px;
-  background: rgba(255,255,255,0.2);
-  border-radius: 12px;
-  color: white;
+  border-top: 1px solid rgba(255,255,255,0.2);
 }
 
-.menu-extra h4 {
-  margin-bottom: 10px;
-  font-size: 16px;
-  text-transform: uppercase;
+.submenu-list li a:hover {
+  background-color: #ffffff;
+  color: #1e90ff;
 }
 
-.menu-extra ul {
-  list-style: none;
-  padding: 0;
-}
-
-.menu-extra ul li {
-  margin: 8px 0;
-}
-
-.menu-extra ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.menu-extra ul li a:hover {
-  text-decoration: underline;
-}
-/*Otras cosas para contenido en Homepage*/
-/* Sincronizar altura del contenido */
-.main-content {
-  flex: 1;
-  min-height: 90vh; /* iguala al menú */
-}
-
-
-/* Bloque extra en el menú */
-.menu-extra {
-  margin-top: 30px;
-  padding: 15px;
-  background: rgba(255,255,255,0.2);
-  border-radius: 12px;
-  color: white;
-}
-
-.menu-extra h4 {
-  margin-bottom: 10px;
-  font-size: 16px;
-  text-transform: uppercase;
-}
-
-.menu-extra ul {
-  list-style: none;
-  padding: 0;
-}
-
-.menu-extra ul li {
-  margin: 8px 0;
-}
-
-.menu-extra ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.menu-extra ul li a:hover {
-  text-decoration: underline;
-}
-
-/* Ícono decorativo al fondo del menú */
-.menu::after {
-  content: "🩺";
+/* Mostrar submenú al pasar el mouse */
+.submenu:hover .submenu-list {
   display: block;
-  font-size: 80px;
+} */
+
+/* Contenido principal */
+.main {
+   float: left;
+   width: 60%;
+   padding: 30px;
+   background-color: #ffffff;
+   border-radius: 10px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.main h1 {
+   font-size: 36px;
+   color: #222;
+   margin-bottom: 15px;
+}
+
+.main p {
+   font-size: 18px;
+   color: #555;
+   margin-bottom: 20px;
+}
+#img{
+   height: 60px;
+   width: 60px;
+   border: 5px solid red;
+}
+
+/* Botón hamburguesa oculto por defecto */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  margin-left: auto;
+}
+/*Media*/
+/* 📱 Teléfonos grandes (iPhone XR, 8+, Galaxy Fold cerrado) */
+@media (max-width: 414px) {
+  .bo {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    height: auto;
+    padding: 10px;
+  }
+
+
+.menu.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+  .hamburger {
+    display: block; /* aparece el botón */
+  }
+
+.menu {
+  display: none;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+  width: 100%;
+  float: none;
+  border-radius: 0;
+  padding: 10px;
   text-align: center;
-  margin-top: 40px;
-  opacity: 0.1;
+  background-color: lightskyblue;
+}
+
+  .menu.show {
+    display: block; /* se muestra al hacer clic */
+  }
+
+  .menuitem {
+    margin: 5px 0;
+    border: none;
+  }
+
+  .main {
+    width: 100%;
+    float: none;
+    margin: 10px 0;
+    padding: 15px;
+  }
 }

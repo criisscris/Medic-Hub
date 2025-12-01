@@ -110,8 +110,8 @@ include ("loginpageBTN.php");
 </div>
 <input name="btnRegistrarse" type="submit" class="boton" value="Registrarse" ></input>
  <?php 
-include 
-"btn_registrarse.php";?>
+include ("btn_registrarse.php");
+?>
 </form>
 </div>
 

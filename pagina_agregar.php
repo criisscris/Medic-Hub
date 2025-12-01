@@ -101,56 +101,56 @@ if (isset($_POST['BTNagregar'])) {
   <div class="form-container">
 
       <h2>Agregar nota médica</h2>
+ <form method="post" enctype="multipart/form-data">
+    <div class="input-box">
+      <label for="txtTitulo">Título</label>
+      <input type="text" id="txtTitulo" name="titulo">
+    </div>
 
-      <div class="input-box">
-        <label for="txtTitulo">Título</label>
-        <input type="text" id="txtTitulo">
-      </div>
+    <div class="input-box">
+      <label for="txtFecha">Fecha</label>
+      <input type="date" id="txtFecha" name="fecha">
+    </div>
 
-      <div class="input-box">
-        <label for="txtFecha">Fecha</label>
-        <input type="date" id="txtFecha">
-      </div>
+    <div class="input-box">
+      <label for="txtPeso">Peso (kg)</label>
+      <input type="number" step="0.01" id="txtPeso" name="peso">
+    </div>
 
-      <div class="input-box">
-        <label for="txtPeso">Peso (kg)</label>
-        <input type="number" step="0.01" id="txtPeso">
-      </div>
+    <div class="input-box">
+      <label for="txtTemperatura">Temperatura (°C)</label>
+      <input type="number" step="0.01" id="txtTemperatura" name="temperatura">
+    </div>
 
-      <div class="input-box">
-        <label for="txtTemperatura">Temperatura (°C)</label>
-        <input type="number" step="0.01" id="txtTemperatura">
-      </div>
+    <div class="input-box">
+      <label for="txtAltura">Altura (cm)</label>
+      <input type="number" step="0.01" id="txtAltura" name="altura">
+    </div>
 
-      <div class="input-box">
-        <label for="txtAltura">Altura (cm)</label>
-        <input type="number" step="0.01" id="txtAltura">
-      </div>
+    <div class="textarea-box">
+      <label for="diagnostico">Diagnóstico</label>
+      <textarea id="diagnostico" name="diagnostico"></textarea>
+    </div>
 
-      <div class="textarea-box">
-        <label for="diagnostico">Diagnóstico</label>
-        <textarea id="diagnostico"></textarea>
-      </div>
+    <div class="textarea-box">
+      <label for="tratamiento">Tratamiento y recomendaciones</label>
+      <textarea id="tratamiento" name="tratamiento"></textarea>
+    </div>
 
-      <div class="textarea-box">
-        <label for="tratamiento">Tratamiento y recomendaciones</label>
-        <textarea id="tratamiento"></textarea>
-      </div>
+    <div class="upload-box">
+      <label for="file-upload" class="upload-btn">
+        <ion-icon name="arrow-up-circle-outline"></ion-icon>
+        Subir imágenes
+      </label>
+      <input id="file-upload" type="file" accept="image/*" multiple name="imagenes[]">
+    </div>
 
-      <div class="upload-box">
-        <label for="file-upload" class="upload-btn">
-          <ion-icon name="arrow-up-circle-outline"></ion-icon>
-          Subir imágenes
-        </label>
-        <input id="file-upload" type="file" accept="image/*" multiple>
-      </div>
+    <div id="preview" class="preview"></div>
 
-      <div id="preview" class="preview"></div>
-
-      <button class="save-btn">Guardar nota</button>
-    
-  </div>
-</div> 
+    <!-- Botón de envío -->
+    <button type="submit" name="BTNagregar" class="save-btn">Guardar nota</button>
+  </form>
+</div>
   <!--Overlay-->
   <div class="menu-overlay" id="menu-overlay"></div>
 
