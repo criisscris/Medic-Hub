@@ -142,7 +142,7 @@ if (isset($_POST['BTNagregar'])) {
         <ion-icon name="arrow-up-circle-outline"></ion-icon>
         Subir imágenes
       </label>
-      <input id="file-upload" type="file" accept="image/*" multiple name="imagenes[]">
+      <input id="file-upload" type="file" accept="image/*,.pdf,.doc,.docx" multiple>
     </div>
 
     <div id="preview" class="preview"></div>
