@@ -64,7 +64,7 @@ if (!isset($_SESSION['user'])) {
  <label for="file-upload" class="upload-btn">
  <ion-icon name="arrow-up-circle-outline"></ion-icon>   
   Subir Imagenes</label>
-  <input id="file-upload" type="file" accept="image/*" multiple>
+  <input id="file-upload" type="file" accept="image/*,.pdf,.doc,.docx" multiple>
 <!-- aqui se veran todas las imagenes  --> 
   <div  id="preview" class="preview"></div>
   <button class="save-btn">Guardar nota</button>

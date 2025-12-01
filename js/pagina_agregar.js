@@ -4,7 +4,8 @@ const LIMITE = 4;
 
 // ✅ Función para validar cantidad de imágenes
 function validarCantidad(files) {
-  if (files.length > 4) {
+  const imagenes = [...files].filter(f => f.type.startsWith("image/"));
+  if (imagenes.length > LIMITE) {
     alert("Solo puedes subir un máximo de 4 imágenes.");
     input.value = ""; 
     preview.innerHTML = "";
@@ -34,30 +35,83 @@ function crearContenedorImagen(src) {
   return container;
 }
 
+// ✅ Función para crear contenedor de archivo PDF/Word
+function crearContenedorArchivo(file) {
+  const container = document.createElement("div");
+  container.classList.add("file-box");
+
+  const icon = document.createElement("span");
+  icon.classList.add("file-icon");
+
+  if (file.name.toLowerCase().endsWith(".pdf")) {
+    icon.classList.add("file-pdf");
+    icon.textContent = "📄"; // Ícono PDF
+  } else {
+    icon.classList.add("file-word");
+    icon.textContent = "📝"; // Ícono Word
+  }
+
+  const name = document.createElement("span");
+  name.classList.add("file-name");
+  name.textContent = file.name;
+
+  const btn = document.createElement("button");
+  btn.textContent = "X";
+  btn.classList.add("delete-btn");
+  btn.addEventListener("click", () => {
+    container.remove();
+  });
+
+  // 👉 Hacer clic en el contenedor abre el archivo
+  const fileURL = URL.createObjectURL(file);
+  container.addEventListener("click", (e) => {
+    // Evitar que el botón eliminar dispare el evento
+    if (e.target !== btn) {
+      window.open(fileURL, "_blank");
+    }
+  });
+
+  container.appendChild(icon);
+  container.appendChild(name);
+  container.appendChild(btn);
+  return container;
+}
+
 // ✅ Función para mostrar preview
 function mostrarPreview(files) {
- // Contar cuántas imágenes ya hay en el preview
   let actuales = preview.querySelectorAll(".img-container").length;
 
   [...files].forEach(file => {
-    if (actuales >= LIMITE) {
-      alert("Solo puedes subir un máximo de 4 imágenes.");
-      return; // no agrega más
-    }
+    if (file.type.startsWith("image/")) {
+      // Validar límite de imágenes
+      if (actuales >= LIMITE) {
+        alert("Solo puedes subir un máximo de 4 imágenes.");
+        return;
+      }
 
-    const reader = new FileReader();
-    reader.onload = e => {
-      const contenedor = crearContenedorImagen(e.target.result);
+      const reader = new FileReader();
+      reader.onload = e => {
+        const contenedor = crearContenedorImagen(e.target.result);
+        preview.appendChild(contenedor);
+      };
+      reader.readAsDataURL(file);
+
+      actuales++;
+    } else if (
+      file.name.toLowerCase().endsWith(".pdf") ||
+      file.name.toLowerCase().endsWith(".doc") ||
+      file.name.toLowerCase().endsWith(".docx")
+    ) {
+      const contenedor = crearContenedorArchivo(file);
       preview.appendChild(contenedor);
-    };
-    reader.readAsDataURL(file);
-
-    actuales++; // aumentar contador
+    }
   });
 }
 
 // ✅ Evento principal
 input.addEventListener("change", () => {
-  mostrarPreview(input.files);
+  if (validarCantidad(input.files)) {
+    mostrarPreview(input.files);
+  }
   input.value = ""; // limpia el input para poder volver a seleccionar
 });
