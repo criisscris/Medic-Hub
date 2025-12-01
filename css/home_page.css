@@ -1,191 +1,254 @@
-* {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
+/* HERO(Header 2) */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to right, #1e90ff, lightskyblue);
+  color: white;
 }
-a{
-    text-decoration: none;
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
 }
-
-.bo {
-   display: flex;     
- font-size: 50px;
-    width: 100%;
-     height: 150px;
-     background-color: lightskyblue;
-         padding: 20px;
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
 }
-/* Menú lateral */
-.menu {
-   float: left;
-   width: 20%;
-   background-color: lightskyblue;
-   color: white;
-   padding: 20px;
-   height: 100%;
-   min-height: 50vh;
-   border-radius: 30px;
+.cta-btn {
+  background: white;
+  color: #1e90ff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
 }
-.menu a {
-    color: white;
-    text-decoration: none;
+.cta-btn:hover {
+  background: #f0f0f0;
 }
 
-.menuitem {
-   padding: 12px;
-   margin-top: 10px;
-   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-   text-transform: uppercase;
-   font-weight: bold;
-   transition: background 0.3s ease;
+/* Acerca de */
+.AcercaDe {
+  background: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+.AcercaDe h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.AcercaDe p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.menuitem:hover {
-   background-color: #1e90ff;
-   cursor: pointer;
-   color: black;
+/* Beneficios */
+.Beneficios {
+  background: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
 }
-.menuitem:hover a {
-    color: black;
+.Beneficios h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
 }
-/* Submenu */
-.submenu {
+.Beneficio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.Beneficio {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-size: 18px;
   position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.submenu-list {
+.Beneficio:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.beneficio-info {
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  font-size: 14px;
+  margin-top: 10px;
+  color: #555;
+}
+
+.Beneficio:hover .beneficio-info {
+  opacity: 1;
+  max-height: 300px; /* se expande */
+}
+
+.beneficio-info img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+/* Como funciona */
+.ComoFunciona {
+  background: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+.ComoFunciona h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+.Pasos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.Paso {
+  background: #1e90ff;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 220px;
+  font-size: 18px;
+}
+
+/* FOOTER(La parte de abajo) */
+.footer {
+  background: #1e90ff;
+  color: white;
+  padding: 40px 20px 20px;
+}
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 15px;
+}
+.footer-section ul {
   list-style: none;
-  padding-left: 15px;
-  margin: 5px 0 0 0;
-  display: none;         /* Oculto por defecto */
-}
-
-.submenu:hover .submenu-list {
-  display: block;        /* Se expande hacia abajo */
-  position: static !important;   /* 🔥 FIX principal */
-}
-/* Se cambio (VERSION ANTIGUA QUE SE DEJA EN FORMA DE COMENTARIO)
-.submenu {
-  position: relative;
-}
-
-.submenu-list {
-  list-style: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #1e90ff;
   padding: 0;
-  margin: 0;
-  display: none;
-  border-radius: 0 0 10px 10px;
-  z-index: 1000;
-  width: 100%;
 }
-
-.submenu-list li a {
-  display: block;
-  padding: 10px;
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+.footer-section ul li a {
   color: white;
   text-decoration: none;
-  font-size: 14px;
-  border-top: 1px solid rgba(255,255,255,0.2);
+  transition: color 0.3s;
 }
-
-.submenu-list li a:hover {
-  background-color: #ffffff;
-  color: #1e90ff;
+.footer-section ul li a:hover {
+  color: #f0f0f0;
 }
-
-/* Mostrar submenú al pasar el mouse */
-.submenu:hover .submenu-list {
-  display: block;
-} */
-
-/* Contenido principal */
-.main {
-   float: left;
-   width: 60%;
-   padding: 30px;
-   background-color: #ffffff;
-   border-radius: 10px;
-   margin-top: 20px;
-   margin-bottom: 20px;
-   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+.social-icons a {
+  color: white;
+  font-size: 24px;
+  margin-right: 12px;
+  transition: color 0.3s;
 }
-
-.main h1 {
-   font-size: 36px;
-   color: #222;
-   margin-bottom: 15px;
+.social-icons a:hover {
+  color: #ddd;
 }
-
-.main p {
-   font-size: 18px;
-   color: #555;
-   margin-bottom: 20px;
-}
-#img{
-   height: 60px;
-   width: 60px;
-   border: 5px solid red;
-}
-
-/* Botón hamburguesa oculto por defecto */
-.hamburger {
-  display: none;
-  font-size: 30px;
-  cursor: pointer;
-  margin-left: auto;
-}
-/*Media*/
-/* 📱 Teléfonos grandes (iPhone XR, 8+, Galaxy Fold cerrado) */
-@media (max-width: 414px) {
-  .bo {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 30px;
-    height: auto;
-    padding: 10px;
-  }
-
-
-.menu.show {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
-  .hamburger {
-    display: block; /* aparece el botón */
-  }
-
-.menu {
-  display: none;
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: all 0.3s ease;
-  width: 100%;
-  float: none;
-  border-radius: 0;
-  padding: 10px;
+.footer-bottom {
   text-align: center;
-  background-color: lightskyblue;
+  margin-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 15px;
+  font-size: 14px;
+}
+.menu-extra {
+  margin-top: 30px;
+  padding: 15px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 12px;
+  color: white;
 }
 
-  .menu.show {
-    display: block; /* se muestra al hacer clic */
-  }
+.menu-extra h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
 
-  .menuitem {
-    margin: 5px 0;
-    border: none;
-  }
+.menu-extra ul {
+  list-style: none;
+  padding: 0;
+}
 
-  .main {
-    width: 100%;
-    float: none;
-    margin: 10px 0;
-    padding: 15px;
-  }
+.menu-extra ul li {
+  margin: 8px 0;
+}
+
+.menu-extra ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu-extra ul li a:hover {
+  text-decoration: underline;
+}
+/*Otras cosas para contenido en Homepage*/
+/* Sincronizar altura del contenido */
+.main-content {
+  flex: 1;
+  min-height: 90vh; /* iguala al menú */
+}
+
+
+/* Bloque extra en el menú */
+.menu-extra {
+  margin-top: 30px;
+  padding: 15px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 12px;
+  color: white;
+}
+
+.menu-extra h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.menu-extra ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-extra ul li {
+  margin: 8px 0;
+}
+
+.menu-extra ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu-extra ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Ícono decorativo al fondo del menú */
+.menu::after {
+  content: "🩺";
+  display: block;
+  font-size: 80px;
+  text-align: center;
+  margin-top: 40px;
+  opacity: 0.1;
 }
