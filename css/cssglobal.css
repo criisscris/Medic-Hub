@@ -303,3 +303,47 @@ input[type="file"] {
     padding: 0 15px;
   }
 }
+
+
+/* Caja genérica para archivos */
+.file-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 200px;
+  padding: 12px;
+  margin: 10px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.file-box:hover {
+  transform: scale(1.05);
+}
+
+/* Ícono del archivo */
+.file-icon {
+  font-size: 28px;
+  margin-right: 10px;
+}
+
+/* Colores según tipo */
+.file-pdf {
+  color: #e74c3c; /* rojo PDF */
+}
+
+.file-word {
+  color: #2980b9; /* azul Word */
+}
+
+/* Nombre del archivo */
+.file-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
