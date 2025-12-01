@@ -17,9 +17,11 @@ document.getElementById("menu-overlay").addEventListener("click", () => {
 
 // Cerrar al hacer clic en cualquier enlace del menú
 document.querySelectorAll("#menu a").forEach(link => {
-  link.addEventListener("click", () => {
-    document.getElementById("menu").classList.remove("show");
-    document.getElementById("menu-overlay").classList.remove("show");
+  link.addEventListener("click", (e) => {
+    if (link.getAttribute("href") !== "#") {
+      document.getElementById("menu").classList.remove("show");
+      document.getElementById("menu-overlay").classList.remove("show");
+    }
   });
 });
 
