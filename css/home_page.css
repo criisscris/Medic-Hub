@@ -264,6 +264,79 @@
   flex: 1;
   padding: 20px;
 }
+/*Tema Señor color nochee*/
+
+body.dark-mode .hero {
+  background: linear-gradient(to right, #222, #333);
+  color: #e0e0e0;
+}
+
+body.dark-mode .cta-btn {
+  background: #333;
+  color: #e0e0e0;
+}
+body.dark-mode .cta-btn:hover {
+  background: #444;
+}
+
+body.dark-mode .AcercaDe,
+body.dark-mode .Beneficios,
+body.dark-mode .ComoFunciona {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark-mode .beneficio-info {
+  color: #ccc;
+}
+
+body.dark-mode .Beneficio {
+  background: #2a2a2a;
+  box-shadow: 0 2px 8px rgba(255,255,255,0.1);
+}
+
+body.dark-mode .Beneficio:hover {
+  background: #333;
+  box-shadow: 0 6px 16px rgba(255,255,255,0.2);
+}
+
+body.dark-mode .ComoFunciona h2 {
+  color: #ccc;
+}
+
+body.dark-mode .Paso {
+  background: #2a2a2a;
+  color: #ccc;
+  box-shadow: 0 2px 8px rgba(255,255,255,0.1);
+}
+
+body.dark-mode .Paso:hover {
+  background: #333;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.2);
+}
+
+body.dark-mode .footer {
+  background: #111;
+  color: #ccc;
+}
+
+body.dark-mode .footer-section ul li a {
+  color: #ccc;
+}
+body.dark-mode .footer-section ul li a:hover {
+  color: #fff;
+}
+
+body.dark-mode .social-icons a {
+  color: #ccc;
+}
+body.dark-mode .social-icons a:hover {
+  color: #fff;
+}
+
+body.dark-mode .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
 /*Media*/
  /*📱 Teléfonos grandes (iPhone XR, 8+, Galaxy Fold cerrado) 
 @media (max-width: 414px) {

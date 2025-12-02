@@ -11,10 +11,11 @@
 <body>
 
   <!-- HEADER -->
-  <div class="bo">
-    <h1>Medic-hub</h1>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-  </div>
+<div class="bo">
+  <h1>Medic-hub</h1>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <button id="dark-toggle">🌙</button>
+</div>
 
   <!-- MENU + CONTENIDO -->
   <div class="page">
@@ -156,6 +157,7 @@
 
   <!-- Scripts -->
   <script src="js/menu_toggle.js"></script>
+  <script src="js/tema_toggle.js"></script>
   <!--<script src="js/script_home.js"></script> -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

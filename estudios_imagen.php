@@ -25,6 +25,7 @@ if (!isset($_SESSION['user'])) {
   <div class="bo">
     <h1>Medic-hub</h1>
     <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <button id="dark-toggle">🌙</button>
   </div>
 
   <!-- MENÚ LATERAL -->
@@ -84,8 +85,9 @@ if (!isset($_SESSION['user'])) {
 </div>  
      <!--Overlay-->
     <div class="menu-overlay" id="menu-overlay"></div>
-
+<!--Scripts-->
   <script src="js/estudios_imagen.js"></script>
+  <script src="js/tema_toggle.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="js/menu_toggle.js"></script>
