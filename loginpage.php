@@ -96,7 +96,7 @@ include ("loginpageBTN.php");
   </label>
   <span class="selection"></span>
 </div><br>
-<p>Seleccione su genero:</p>
+<p>Seleccione su Sexo:</p>
 <div class="genero" >
  <label>
   <input value="hombre" name="value_genero" id="hombre" type="radio" checked="">
@@ -119,13 +119,13 @@ include ("btn_registrarse.php");
 <!-- Botones y h1 para cambiar entre el formulario de registro e inicio de sesion -->
 <div class="toggle-box">
   <div class="toggle-panel toggle-izquierda" >
-  <img src="img/logo.png" alt="Logo de la pagina">
+  <img src="img/MedicHub.png" alt="Medic-Hub Logo">
 <h1>Bienvenido a</h1>
 <h1>Medic-Hub</h1>
 <button class="boton registro-btn" >Registrarse</button>
   </div>
  <div class="toggle-panel toggle-derecha" >
-    <img src="img/logo.png" alt="Logo de la pagina">
+    <img src="img/MedicHub.png" alt="Medic-Hub logo">
 <h1>Bienvenido a</h1>
 <h1>Medic-Hub</h1>
 <button class="boton inicio-btn" >Iniciar sesion</button>
