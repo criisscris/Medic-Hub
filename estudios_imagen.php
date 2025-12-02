@@ -28,23 +28,26 @@ if (!isset($_SESSION['user'])) {
   </div>
 
   <!-- MENÚ LATERAL -->
-  <div class="page">
-    <div class="menu" id="menu">
-      <div class="menuitem"><ion-icon name="home-outline"></ion-icon><a href="home_page.php">Menu</a></div>
-      <div class="menuitem"><ion-icon name="document-text-outline"></ion-icon><a href="#">Tus notas</a></div>
+<div class="page">
+  <div class="menu" id="menu">
+    <div class="menuitem"><ion-icon name="home-outline"></ion-icon><a href="home_page.php">Menu</a></div>
+    <div class="menuitem"><ion-icon name="document-text-outline"></ion-icon><a href="tus_notas.php">Tus notas</a></div>
 
-      <div class="menuitem submenu">
-        <ion-icon name="add-circle-outline"></ion-icon>
-        <a href="#">Agregar notas</a>
-        <ul class="submenu-list">
-          <li><a href="pagina_agregar.php">Notas médicas</a></li>
-          <li><a href="estudios_imagen.php">Estudios de imagen</a></li>
-              <li><a href="informe_especialista.php">Informe de especialista</a></li>
-        </ul>
+    <div class="menuitem submenu">
+      <ion-icon name="add-circle-outline"></ion-icon>
+      <a href="#">Agregar notas</a>
+      <ul class="submenu-list">
+        <li><a href="pagina_agregar.php">Notas médicas</a></li>
+        <li><a href="estudios_imagen.php">Estudios de imagen</a></li>
+            <li><a href="informe_especialista.php">Informe de especialista</a></li>
+      </ul>
     </div>
-
-    <div class="menuitem"><ion-icon name="person-outline"></ion-icon><a href="#">Perfil</a></div>
-    </div>  
+<div id="togglePerfil" class="menuitem">
+  <ion-icon name="person-outline"></ion-icon>
+  <span>Perfil</span>
+</div>
+  </div>
+</div> 
   <!-- CONTENIDO -->
   <div class="form-container">
   

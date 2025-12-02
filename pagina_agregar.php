@@ -20,6 +20,7 @@ if (!isset($_SESSION['user'])) {
 }
 
 // Configuración de Cloudinary
+
 $cloud_name = 'ds5ye1wog';
 $api_key = '869649266473638';
 $api_secret = 'osHIkLNNHp9h2M2fBuZdteb3uAY';
@@ -64,7 +65,7 @@ if (isset($_POST['BTNagregar'])) {
     $id_user = $_SESSION['user'];
 
     $stmt = $conexion->prepare("INSERT INTO datos (titulo, fecha, peso, temperatura, altura, diagnostico, tratamiento, imagenes, ID_user) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssddddsss", $titulo, $fecha, $peso, $temperatura, $altura, $diagnostico, $tratamiento, $imagenes_str, $id_user);
+$stmt->bind_param("ssddddsss", $titulo, $fecha, $peso, $temperatura, $altura, $diagnostico, $tratamiento, $imagenes_str, $id_user);
     if ($stmt->execute()) {
         echo "<script>alert('Nota guardada correctamente');</script>";
     } else {
@@ -103,28 +104,28 @@ if (isset($_POST['BTNagregar'])) {
       <h2>Agregar nota médica</h2>
  <form method="post" enctype="multipart/form-data">
     <div class="input-box">
-      <label for="txtTitulo">Título</label>
-      <input type="text" id="txtTitulo" name="titulo">
+      <label for="txtTitulo"></label>
+      <input type="text" id="txtTitulo" name="titulo" placeholder="Titulo o motivo">
     </div>
 
     <div class="input-box">
-      <label for="txtFecha">Fecha</label>
-      <input type="date" id="txtFecha" name="fecha">
+      <label for="txtFecha"></label>
+      <input type="date" id="txtFecha" name="fecha" placeholder="Fecha">
     </div>
 
     <div class="input-box">
-      <label for="txtPeso">Peso (kg)</label>
-      <input type="number" step="0.01" id="txtPeso" name="peso">
+      <label for="txtPeso"></label>
+      <input type="number" step="0.01" id="txtPeso" name="peso" placeholder="Peso (kg)">
     </div>
 
     <div class="input-box">
-      <label for="txtTemperatura">Temperatura (°C)</label>
-      <input type="number" step="0.01" id="txtTemperatura" name="temperatura">
+      <label for="txtTemperatura"></label>
+      <input type="number" step="0.01" id="txtTemperatura" name="temperatura" placeholder="Temperatura (°C)">
     </div>
 
     <div class="input-box">
-      <label for="txtAltura">Altura (cm)</label>
-      <input type="number" step="0.01" id="txtAltura" name="altura">
+      <label for="txtAltura"></label>
+      <input type="number" step="0.01" id="txtAltura" name="altura" placeholder="Altura (cm)">
     </div>
 
     <div class="textarea-box">

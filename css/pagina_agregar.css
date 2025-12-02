@@ -8,11 +8,13 @@
 }
 
 body {
-    background-color: #F0F4F3;
-    font-family: Arial, sans-serif;
+  background-color: #F0F4F3;
+  font-family: Arial, sans-serif;
 }
 
-a { text-decoration: none; }
+a {
+  text-decoration: none;
+}
 
 /* ===========================
    HEADER Y MENU LATERAL
@@ -32,11 +34,15 @@ a { text-decoration: none; }
 }
 
 .menu {
+  position: fixed;
+  top: 80px;
+  left: 0;
   width: 250px;
   background: lightskyblue;
   padding: 20px;
-  border-radius: 20px;
-  min-height: 90vh;
+  border-radius: 0 20px 20px 0;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
 }
 
 .menuitem {
@@ -48,7 +54,9 @@ a { text-decoration: none; }
   text-transform: uppercase;
 }
 
-.menuitem a { color: white; }
+.menuitem a {
+  color: white;
+}
 
 .menuitem:hover {
   background: #1e90ff;
@@ -63,36 +71,18 @@ a { text-decoration: none; }
   list-style: none;
   padding-left: 15px;
   margin: 5px 0 0 0;
-  display: none;         /* Oculto por defecto */
+  display: none;
 }
 
 .submenu:hover .submenu-list {
-  display: block;        /* Se expande hacia abajo */
-  position: static !important;   /* 🔥 FIX principal */
+  display: block;
+  position: static !important;
 }
-
-/* Lo cambie, no se si se lo uses despues o algo
-.submenu { position: relative; }
-
-.submenu-list {
-  display: none;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 100%;
-  background: #1e90ff;
-  border-radius: 0 0 8px 8px;
-  list-style: none;
-}
-
-.submenu:hover .submenu-list { display: block; }*/
 
 /* ===========================
    CONTENIDO PRINCIPAL
 =========================== */
-
 #agregar_nota {
-  margin-left: 280px;
   margin-top: 20px;
   padding: 25px;
   max-width: 900px;
@@ -101,84 +91,75 @@ a { text-decoration: none; }
   box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
 
-.container_datos {
-  width: 100%;
-  height: 45px;
-  margin-bottom: 15px;
-  padding: 0 15px;
-  background: #EEEEEE;
-  border-radius: 8px;
+@media (min-width: 769px) {
+  #agregar_nota {
+    margin-left: 280px;
+  }
+}
+
+/* ===========================
+   TARJETAS DE NOTAS MÉDICAS
+=========================== */
+.nota {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.container_datos input {
-  width: 100%;
-  border: none;
-  background: transparent;
-  font-size: 16px;
-  outline: none;
+.nota-text {
+  flex: 1 1 300px;
 }
 
-/* Textareas */
-.textarea-diagnostico {
-  width: 100%;
-  min-height: 150px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  padding: 12px;
-  background: #f9f9f9;
-  border: 1px solid #bbb;
+.nota-text h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #2e86de;
+}
+
+.nota-text p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #333;
+}
+
+.nota-images {
+  flex: 1 1 200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nota-images img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
   border-radius: 8px;
-  resize: vertical;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
-/* SUBIR IMÁGENES */
-.upload-btn {
-  display: inline-block;
-  background: #4CAF50;
-  color: white;
-  padding: 10px 18px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-#preview img {
-  width: 150px;
-  height: 150px;
-  margin: 10px;
-  border-radius: 8px;
-}
-
-/* BOTÓN GUARDAR */
-#BTNagregar {
-  width: 180px;
-  height: 45px;
-  background: #1e90ff;
-  border: none;
-  border-radius: 40px;
-  color: white;
-  font-size: 16px;
-  float: right;
-}
-#diagnostico,
-#tratamiento {
-  margin-top: 15px;
-}
-
-
-/*Media*/
+/* ===========================
+   RESPONSIVE
+=========================== */
 @media (max-width: 768px) {
-
   .menu {
     display: none;
     width: 100%;
     min-height: auto;
   }
 
-  .menu.show { display: block; }
+  .menu.show {
+    display: block;
+  }
 
-  .hamburger { display: block; }
+  .hamburger {
+    display: block;
+  }
 
   #agregar_nota {
     margin-left: 0;

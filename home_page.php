@@ -19,7 +19,7 @@
 <div class="page">
   <div class="menu" id="menu">
     <div class="menuitem"><ion-icon name="home-outline"></ion-icon><a href="home_page.php">Menu</a></div>
-    <div class="menuitem"><ion-icon name="document-text-outline"></ion-icon><a href="#">Tus notas</a></div>
+    <div class="menuitem"><ion-icon name="document-text-outline"></ion-icon><a href="tus_notas.php">Tus notas</a></div>
 
     <div class="menuitem submenu">
       <ion-icon name="add-circle-outline"></ion-icon>
